@@ -9,6 +9,6 @@
  */
 angular.module('upstreamApp')
 .factory('loginService', function ($resource) {
-      var data = $resource('http://127.0.0.1:8000/api-token-auth/');	
+      var data = $resource('http://192.168.1.104:8000/api-token-auth/');	
       return data;
   });
