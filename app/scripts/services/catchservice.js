@@ -9,7 +9,7 @@
  */
 angular.module('upstreamApp')
 .factory('catchService', function ($resource) {
-      var data = $resource('http://192.168.1.104:8000/api/catches/:catch',{catch: "@catch"}, {
+      var data = $resource('http://162.243.237.149/api/catches/:catch',{catch: "@catch"}, {
       update:{
           method:'PUT'
           }
