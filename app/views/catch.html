@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Workouts</h2>
+  
 
 
   <form name="myForm">
@@ -26,19 +26,21 @@
     </fieldset>
     <br>
 
-<div ng-repeat="catch in catches">
-	<div class="panel panel-default">
-			<div class="panel-heading">{{catch.title}}</div>
-			<div class="panel-body">
-				<div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6">
 
-						<div class="panel panel-default">
-							<div class="panel-body"><img ng-src="{{catch.fishPhoto}}" alt="" class="img-responsive center-block" />
-						</div>
-					</div>                
-				</div>
-			</div>
-		</div>	
+<md-content class="md-padding" ng-repeat="catch in catches">
+	<md-card>
+      <img ng-src="{{catch.fishPhoto}}" class="md-card-image">
+      <md-card-content>
+        
+        <h3>{{catch.title}}</h3>
+          
+        
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button>Like</md-button>
+        <md-button>Share</md-button>
+      </md-card-actions>
+    </md-card>
 
+</md-content>
 </div>
