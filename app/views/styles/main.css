@@ -5,6 +5,10 @@
   padding: 0.2em 0;
 }
 
+md-card {
+  max-width: 75px;
+}
+
 body {
   padding: 0;
 }

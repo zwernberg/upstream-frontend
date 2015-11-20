@@ -26,21 +26,28 @@
     </fieldset>
     <br>
 
+    
+		<md-content class="md-padding" style="max-width: 600px;" ng-repeat="catch in catches">
+			
+				<md-card>
+					<md-card-footer>
+			      	<h4 class="md-body-headline">posted by {{catch.owner}}</h4>
+			      	<h4 class="md-body-headline">{{catch.created_date | date : mediumDate}}</h4>
+			      </md-card-footer>
+			      <img ng-src="{{catch.fishPhoto}}" class="img-responsive">
+			      <md-card-content>
+			        
+			        <h3 class="md-body-headline">{{catch.title}}</h3>  
+			      </md-card-content>
 
-<md-content class="md-padding" ng-repeat="catch in catches">
-	<md-card>
-      <img ng-src="{{catch.fishPhoto}}" class="md-card-image">
-      <md-card-content>
-        
-        <h3>{{catch.title}}</h3>
-          
-        
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button>Like</md-button>
-        <md-button>Share</md-button>
-      </md-card-actions>
-    </md-card>
+			      <md-card-actions layout="row" layout-align="end center">
+			        <md-button>Like</md-button>
+			        <md-button>Share</md-button>
+			      </md-card-actions>
 
-</md-content>
+
+			    </md-card>
+			
+		</md-content>
+	
 </div>
