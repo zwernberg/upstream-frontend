@@ -1,53 +1,14 @@
-<div class="container">
-  
-
-
-  <form name="myForm">
-    <fieldset>
-      <legend>Upload on form submit</legend>
-      title:
-      <input type="text" name="title" ng-model="title" size="31" required>
-      <br>Photo:
-      <input type="file" ngf-select ng-model="picFile" name="file"    
-             accept="image/*" ngf-max-size="2MB" required>
-      <i ng-show="myForm.file.$error.required">*required</i><br>
-      <i ng-show="myForm.file.$error.maxSize">File too large 
-          {{picFile.size / 1000000|number:1}}MB: max 2M</i>
-      <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
-      <br>
-      <button ng-disabled="!myForm.$valid" 
-              ng-click="uploadPic(picFile)">Submit</button>
-      <span class="progress" ng-show="picFile.progress >= 0">
-        <div style="width:{{picFile.progress}}%" 
-            ng-bind="picFile.progress + '%'"></div>
-      </span>
-      <span ng-show="picFile.result">Upload Successful</span>
-      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-    </fieldset>
-    <br>
-
-    
-		<md-content class="md-padding" style="max-width: 600px;" ng-repeat="catch in catches">
-			
-				<md-card>
-					<md-card-footer>
-			      	<h4 class="md-body-headline">posted by {{catch.owner}}</h4>
-			      	<h4 class="md-body-headline">{{catch.created_date | date : mediumDate}}</h4>
-			      </md-card-footer>
-			      <img ng-src="{{catch.fishPhoto}}" class="img-responsive">
-			      <md-card-content>
-			        
-			        <h3 class="md-body-headline">{{catch.title}}</h3>  
-			      </md-card-content>
-
-			      <md-card-actions layout="row" layout-align="end center">
-			        <md-button>Like</md-button>
-			        <md-button>Share</md-button>
-			      </md-card-actions>
-
-
-			    </md-card>
-			
-		</md-content>
-	
+<div class="stream">
+	<div class="stream-item" ng-repeat="catch in catches">
+		<div class="by-line">
+			<h5>posted by {{catch.owner}}</h5>
+			<h5>{{catch.created_date | date:short}}</h5>
+		</div>
+		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
+		<h4>{{catch.title}}</h4>
+		<md-card-actions layout="row" layout-align="end center">
+			<md-button>Like</md-button>
+			<md-button>Share</md-button>
+		</md-card-actions>
+	</div>
 </div>

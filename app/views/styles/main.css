@@ -1,3 +1,40 @@
+* {
+  /*border: dashed red 1px;*/
+}
+.by-line h5 {
+  display: inline-block;
+  
+}
+.by-line h5:nth-child(2) {
+  float:right;
+  
+}
+.stream {
+  margin: auto;
+  
+  width: 500px;
+}
+.stream-item {  
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+   
+    margin: 0 0 8px;
+    padding: 20px 0;
+}
+.stream-item:hover {
+    background: #fcfcfc;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.stream-item img {
+  width: 500px;
+  margin: auto;
+}
+
+
+
+
+
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -5,9 +42,7 @@
   padding: 0.2em 0;
 }
 
-md-card {
-  max-width: 75px;
-}
+
 
 body {
   padding: 0;
@@ -25,6 +60,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
+
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {

@@ -41,6 +41,10 @@ angular
         controller: 'CatchCtrl',
         controllerAs: 'catch'
       })
+      .when('/upload', {
+        templateUrl: 'views/upload.html',
+        controller: 'UploadCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
