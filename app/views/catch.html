@@ -1,5 +1,5 @@
 <div class="stream">
-	<div class="stream-item" ng-repeat="catch in catches">
+	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_date'">
 		
 		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
 		<div class="by-line">
