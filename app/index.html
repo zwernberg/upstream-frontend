@@ -15,6 +15,8 @@
     <!-- endbuild -->
     <!-- build:css(app) styles/main.css -->
     <link rel="stylesheet" href="views/styles/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <!-- endbuild -->
 
 
@@ -53,16 +55,16 @@
         </div>
       </div>
     </div> -->
-    <div class="header">
-      <md-toolbar layout="row" >
-          <div class="md-toolbar-tools md-accent" layout-align="center">
-            <h1>Upstream</h1>
-            <md-button class="md-accent"><a href="#/">Stream</a></md-button>
-            <md-button class="md-accent"><a ng-href="#/upload">Upload</a></md-button>
-            <md-button class="md-accent"><a ng-href="#/about">About</a></md-button>
-          </div>
-      </md-toolbar>
-    </div>
+        
+      <md-toolbar layout="row">  
+        <div class="md-toolbar-tools" layout-align="center">      
+            <h1><em>Upstream</em></h1>
+            <md-button class="material-icons"><a ng-href="#/stream">directions_boat</a></md-button>
+            <md-button class="material-icons"><a ng-href="#/upload">add_a_photo</a></md-button>       
+            <md-button class="material-icons"><a ng-href="#/about">info_outline</a></md-button> 
+        </div>      
+      </md-toolbar>   
+    
     
     <div ng-view=""></div>
     
