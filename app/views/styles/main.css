@@ -14,7 +14,7 @@
 
 .stream {
   margin: auto;
-  
+  margin-top: 20px;
   max-width: 500px;
 }
 .stream-item {  
@@ -40,6 +40,7 @@
 
 
 
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -55,7 +56,7 @@ body,html {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+
 .marketing,
 .footer {
   padding-left: 15px;

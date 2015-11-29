@@ -26,7 +26,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+    <!-- Add your site or application content here 
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -52,11 +52,20 @@
           </div>
         </div>
       </div>
+    </div> -->
+    <div class="header">
+      <md-toolbar layout="row" >
+          <div class="md-toolbar-tools md-accent" layout-align="center">
+            <h1>Upstream</h1>
+            <md-button class="md-accent"><a href="#/">Stream</a></md-button>
+            <md-button class="md-accent"><a ng-href="#/upload">Upload</a></md-button>
+            <md-button class="md-accent"><a ng-href="#/about">About</a></md-button>
+          </div>
+      </md-toolbar>
     </div>
-
-    <div class="container">
+    
     <div ng-view=""></div>
-    </div>
+    
 
     <div class="footer">
       <div class="container">

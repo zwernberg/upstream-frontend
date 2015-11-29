@@ -19,7 +19,7 @@ angular
 		'ngFileUpload',
     'ngMaterial'
   ])
-  .config(function ($routeProvider, $httpProvider) {
+  .config(function ($routeProvider, $httpProvider, $mdThemingProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/catch.html',
@@ -49,5 +49,9 @@ angular
         redirectTo: '/'
       });
 		$httpProvider.interceptors.push('AuthInterceptor');
+    
+    $mdThemingProvider.theme('default')
+    .primaryPalette('blue')
+    .accentPalette('orange');
   });
 
