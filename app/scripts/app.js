@@ -45,6 +45,10 @@ angular
         templateUrl: 'views/upload.html',
         controller: 'UploadCtrl'
       })
+      .when('/user', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
