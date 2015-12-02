@@ -1,40 +1,21 @@
-<div class="container text-center"> 
+<div class="container">  
+  <form ng-submit="loginUser()">
 
-  
-  <form class="form-horizontal" ng-submit="loginUser()">
-  <fieldset>
-  
   <!-- Form Name -->
-  <legend>Welcome to Upstream!</legend>
+  <h1 class="md-display-3 text-center">Welcome to Upstream!</h1>
   
-  <!-- Username input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="Username">Username</label>  
-    <div class="col-md-4">
-    <input id="Username" name="Username" ng-model="username" type="text" placeholder="username" class="form-control input-md" required="">
-  
-    </div>
-  </div>
-  
-  <!-- Password input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="password">password</label>
-    <div class="col-md-4">
-      <input id="password" name="password" ng-model="password" type="password" placeholder="password" class="form-control input-md" required="">
-  
-    </div>
-  </div>
-  
-  
+  <!-- Username and password input-->
+  <md-input-container flex>
+      <label>Username</label>
+      <input ng-model="username">
+   </md-input-container>
+   <md-input-container flex>
+      <label>Password</label>
+      <input ng-model="password">
+   </md-input-container>
   
   <!-- Button -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="login"></label>
-    <div class="col-md-4">
-      <button id="login" type="submit" value="add" name="login" class="btn btn-primary">login</button>
-    </div>
-  </div>
-  
-  </fieldset>
+  <md-button class="md-raised">Login</md-button>
+
   </form>
 </div>
