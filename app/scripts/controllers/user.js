@@ -8,10 +8,8 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('UserCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('UserCtrl', function ($scope, userService, $resource, $routeParams) {
+	var user = userService.get({id: $routeParams.userId}, function() {
+   		$scope.user = user;
+	});
   });

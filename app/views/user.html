@@ -1,9 +1,9 @@
 <div class="container text-center">
-	<h3>This is the profile page of {{username}}</h3>
+	<h3>This is the profile page of {{user.username}}</h3>
 </div>
 
 <div class="stream">
-	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">
+	<div class="stream-item" ng-repeat="catch in user.catches | orderBy: '-created_at'">
 		
 		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
 		<div class="by-line">

@@ -45,7 +45,7 @@ angular
         templateUrl: 'views/upload.html',
         controller: 'UploadCtrl'
       })
-      .when('/user', {
+      .when('/user/:userId', {
         templateUrl: 'views/user.html',
         controller: 'UserCtrl'
       })
