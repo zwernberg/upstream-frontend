@@ -1,9 +1,8 @@
-* {
-  /*border: dashed red 1px;*/
-}
+
+/*BEGIN STYLING FOR THE STREAM CARDS*/
 .by-line h5 {
   display: inline-block;
-  color: #00ACC1;
+  color: #2196F3;
   font-weight: 700;
   padding-left: 8px;
   padding-right: 8px; 
@@ -11,20 +10,19 @@
 .by-line h5:nth-child(2) {
   float:right;  
 }
-
 .stream {
   margin: auto;
   margin-top: 20px;
   max-width: 600px;
 }
 .stream-item {  
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);   
-    margin-bottom: 30px; 
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);   
+  margin-bottom: 30px; 
 }
 .stream-item:hover {
-    background: #fcfcfc;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    cursor: pointer;
+  background: #fcfcfc;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 .stream-item h4 {  
   padding-left: 8px;
@@ -34,6 +32,7 @@
   width: 600px;
   margin: auto;
 }
+/*END STYLING FOR THE STREAM CARDS*/
 
 
 
@@ -41,12 +40,6 @@
 
 
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
 
 
@@ -82,9 +75,7 @@ body,html {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  margin-top: 100px;
 }
 
 .container-narrow > hr {
