@@ -8,8 +8,16 @@
  * Service in the frontendApp.
  */
 angular.module('upstreamApp')
-.factory('AuthInterceptor', function($injector, $location, $q) {
+.factory('AuthInterceptor', function($injector, $location, $q, $window) {
   return {
+		request: function(config){
+			config.headers = config.headers || {};
+      if ($window.sessionStorage.token) {
+        config.headers.Authorization = $window.sessionStorage.token;
+      }
+      return config;
+			
+		},
     responseError: function responseError(rejection) {
       if (rejection.status === 401
             && rejection.config.url !== '/login') {

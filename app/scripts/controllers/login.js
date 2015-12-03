@@ -8,7 +8,7 @@
  * Controller of the frontendApp
  */
 angular.module('upstreamApp')
-  .controller('LoginCtrl', function ($scope, loginService, $location, $http, $resource) {
+  .controller('LoginCtrl', function ($scope, loginService, $location, $http, $resource, $window) {
 		$scope.username = '';
 		$scope.password = '';
 		var data = {
@@ -20,6 +20,7 @@ angular.module('upstreamApp')
 			'password': $scope.password},function(res){
 				var token = "token " + res.token;
           		$http.defaults.headers.common['Authorization'] = token;
+        		$window.sessionStorage.token = token;		 
 				$location.path("/");
 			});
 		}
