@@ -19,7 +19,6 @@ angular.module('upstreamApp')
       $timeout(function () {
         file.result = response.data;
 		console.log(response.data);
-		$scope.catches.push(response.data);
       });
     }, function (response) {
       if (response.status > 0)
@@ -32,11 +31,4 @@ angular.module('upstreamApp')
 	
 	
 	
-		$scope.catches = catchService.query();		
-		$scope.addCatch = function(addCatch){
-			$scope.newCatch = catchService.save(addCatch,function(){
-				$scope.catches.push($scope.newCatch);
-			});
-			
-		}
   });
