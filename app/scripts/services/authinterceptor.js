@@ -19,7 +19,7 @@ angular.module('upstreamApp')
 			
 		},
     responseError: function responseError(rejection) {
-      if (rejection.status === 401
+      if (rejection.status === 401 || 403
             && rejection.config.url !== '/login') {
          $location.path("/login");
       }
