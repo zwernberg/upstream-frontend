@@ -2,21 +2,25 @@
   <form ng-submit="loginUser()">
 
   
-  <h1 class="md-display-3 text-center">Upstream.</h1>
-  <h1 class="md-display-1 text-center">It's fish all the way down.</h1>
+      
+          <h1 class="md-display-3 text-center">Upstream.</h1>
+          <h1 class="md-display-1 text-center">It's fish all the way down.</h1>
+      
   
-  <!-- Username and password input-->
-  <md-input-container flex>
-      <label>Username</label>
-      <input autocapitalize="off" ng-model="username">
-   </md-input-container>
-   <md-input-container flex>
-      <label>Password</label>
-      <input type="password" autocapitalize="off" ng-model="password">
-   </md-input-container>
-  
-  <!-- Button -->
-  <md-button class="md-raised">Login</md-button>
-
+      <!-- Username and password input-->
+   <div layout="column" layout-sm="column">
+     
+          <md-input-container flex>
+              <label>Username</label>
+              <input autocapitalize="off" ng-model="username">
+          </md-input-container>
+          <md-input-container flex>
+              <label>Password</label>
+              <input type="password" autocapitalize="off" ng-model="password">
+          </md-input-container>
+       
+      <!-- Button -->
+      <md-button class="md-raised md-primary" layout-align="center">Login</md-button>
+   </div>
   </form>
 </div>
