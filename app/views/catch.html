@@ -2,8 +2,8 @@
 	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">		
 		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
 		<div class="by-line">
-			<h5 class="md-title md-body-2">posted by {{catch.owner}}</h5>
-			<h5>{{catch.created_at | date:short}}</h5>
+			<h5 class="md-title md-body-3"><a ng-href="#/user/{{catch.owner}}">{{catch.owner}}</a></h5>
+			<h5 class="md-title md-body-2">{{catch.created_at | date:short}}</h5>
 		</div>
 		<h4 class="md-display-1">{{catch.title}}</h4>
 		<md-card-actions layout="row" layout-align="end">

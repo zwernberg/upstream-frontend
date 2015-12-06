@@ -35,11 +35,17 @@
 /*END STYLING FOR THE STREAM CARDS*/
 
 
+/*BEGIN STYLING FOR THE USER GRID*/
+.user-grid {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 600px;
+}
+.user-grid img {
+  margin-bottom: 18px;
+}
 
-
-
-
-
+/*END STYLING FOR THE USER GRID*/
 
 
 

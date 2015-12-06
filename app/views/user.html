@@ -1,7 +1,14 @@
 <div class="container text-center">
-	<h1 class="md-display-1 text-center">This is the profile page of {{user.username}}</h1>
+	<h1 class="md-display-3 text-center">Photos by {{user.username}}</h1>
 </div>
 
+<div class="user-grid" layout-wrap layout="row">
+	<div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
+		<a ng-href="#/user/{{catch.owner}}/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}"  height="180" width="180"></a>
+	</div>
+</div>
+
+<!-- 
 <div class="stream">
 	<div class="stream-item" ng-repeat="catch in user.catches | orderBy: '-created_at'">
 		
@@ -15,5 +22,5 @@
 			<md-button><span class="material-icons">favorite_border</span></md-button>
 		</md-card-actions>
 	</div>
-</div>
+</div> -->
 

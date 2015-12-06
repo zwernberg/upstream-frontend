@@ -8,7 +8,7 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('CatchCtrl', function ($scope, catchService, $resource,  Upload, $routeParams, $timeout) {
+  .controller('CatchCtrl', function ($scope, catchService, userService, $resource,  Upload, $routeParams, $timeout) {
     $scope.uploadPic = function(file) {
     file.upload = Upload.upload({
       url: 'http://162.243.237.149/api/catches',
@@ -36,7 +36,8 @@ angular.module('upstreamApp')
 		$scope.addCatch = function(addCatch){
 			$scope.newCatch = catchService.save(addCatch,function(){
 				$scope.catches.push($scope.newCatch);
-			});
-			
+			});			
 		}
+
+    
   });
