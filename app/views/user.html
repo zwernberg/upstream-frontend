@@ -1,12 +1,13 @@
+
 <div class="container text-center">
 	<h1 class="md-display-3 text-center">Photos by {{user.username}}</h1>
 </div>
 
 <div class="user-grid" layout-wrap layout="row">
 	<div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
-		<a ng-href="#/user/{{catch.owner}}/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive" height="180" width="180"></a>
+		<a ng-href="#/user/{{catch.owner}}/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive"></a>
 	</div>
-</div>
+</div> 
 
 <!-- 
 <div class="stream">
