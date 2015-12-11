@@ -17,15 +17,18 @@
             <h6 class="md-caption text-center" ng-hide="picFile">Maximum file size of 2MB</h6>
         </div>
         
-        <md-input-container flex ng-show="picFile">
-          <label>Describe this photo</label>
-          <input ng-model="title">
-        </md-input-container>
+        
         
         <i ng-show="myForm.file.$error.maxSize">File too large 
             {{picFile.size / 1000000|number:1}}MB: max 2M</i>
         <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
        
+        <h3 class="md-display-1" ng-show="picFile">Describe this photo</h3>
+        <md-input-container flex ng-show="picFile" md-no-float>
+          <input ng-model="title">
+        </md-input-container>
+       
+        
         <div layout="row" flex>
             <md-button class="md-raised md-warn" ng-click="picFile = null" ng-show="picFile" flex>Remove</md-button>              
             <md-button class="md-raised md-primary" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
