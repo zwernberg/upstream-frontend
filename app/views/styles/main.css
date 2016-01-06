@@ -3,6 +3,10 @@ body,html {
   background: #f9f9f9;
 }
 
+.container {
+  max-width: 600px;
+}
+
 /*BEGIN STYLING FOR THE STREAM CARDS*/
 .by-line h5 {
   display: inline-block;
