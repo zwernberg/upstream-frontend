@@ -11,8 +11,9 @@ angular.module('upstreamApp')
   .controller('CatchCtrl', function ($scope, catchService, userService, $resource,  Upload, $routeParams, $timeout) {
     $scope.catches = catchService.query();
 	
-	$scope.likePhoto = function(){
-        //add logic
+	$scope.likePhoto = function(thisCatch){
+        thisCatch.likes++;
+        //need to figure out updating in the db
     }
 	
    

@@ -6,11 +6,14 @@
 			<h5 class="md-title md-body-2">{{catch.created_at | date:short}}</h5>
 		</div>
 		<h4 class="md-display-1">{{catch.title}}</h4>
-		<md-card-actions layout="row" layout-align="end">
-			<md-button class="md-icon-button" aria-label="Favorite" ng-click="likePhoto()">
+		<md-card-actions layout="row" layout-align="end" ng-click="likePhoto(catch)">
+            <h4>{{catch.likes}}</h4>
+			<md-button class="md-icon-button" aria-label="Favorite" >
+               
 				<span class="material-icons">favorite_border</span>
-                <span>{{catch.likes}}</span>
+                              
 			</md-button>
+            
 		</md-card-actions>
 	</div>
 </div>
