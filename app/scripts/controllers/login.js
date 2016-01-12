@@ -11,10 +11,7 @@ angular.module('upstreamApp')
   .controller('LoginCtrl', function ($scope, loginService, $location, $http, $resource, $window) {
 		$scope.username = '';
 		$scope.password = '';
-		var data = {
-			'username': $scope.username,
-			'password': $scope.password
-		};
+		
 		$scope.loginUser = function () {
 			$scope.login = loginService.save({'username': $scope.username,
 			'password': $scope.password},function(res){
