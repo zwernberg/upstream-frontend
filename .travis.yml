@@ -10,6 +10,8 @@ env:
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
-script: grunt build
+script: 
+- grunt build
+- git status
 after_success:
 - ./build.sh
