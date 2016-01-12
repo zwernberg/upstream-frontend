@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -rf out || exit 0;
 git config user.name "Travis-CI"
 git config user.email "travis@upstream.com"
 git add .
