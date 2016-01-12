@@ -12,4 +12,4 @@ before_script:
   - 'bower install'
 script: grunt build
 after_success:
-	- .build.sh
+- .build.sh
