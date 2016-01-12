@@ -1,10 +1,15 @@
 sudo: false
 language: node_js
 node_js:
-  - 'iojs'
   - '0.12'
-  - '0.10'
+env:
+	global:
+	- GH_REF: github.com/zwernberg/upstream-frontend.git
+	- secure: "hEfZQYWamlvxpE5QXoA2MOeIMqRdROc8ZavQ/T32OA5G1cjmg9IKDvJkUCElKTq7N7DH/tbPZtFfJxmK6Z9pGn2Cn5memCoA7Wi950aCaxv7tQgGhx466d88zQbcUy3FA5CPMDakGQ7pZ3Qr39mKCpb66Qb6OhxxKt2bvb9jXVYciIRXW0N8MNbsLoVodvCdl+RM/HanV/Z7jeD4IiljNVSUJgxho0LFHlHPV+F4SE6qfXr9UkLMrhKns59MX6FraiKxi/smj10okSZprdbjL9b3LCHHMLmnFIuTupdjvNjOoXdm0whWrU94d584SUl35DVkCdpUbKcjejlUGUxr6cnnKpklBqaztz29XoZcJRNBPuiDfROWssVf8rW+kANsyeeoeovBlaz2RmmT6HVHCoe41M0GC3JQp00ZYiqXy19uRUHBdW2+NtHGXAV11pyUPPWw2d2bW2qF+V9cHeqdXYHUNzlIJ79GlJFzYTDTQp1V5eBdpiPXjkMyLWuASR3Lh+roDvY69k9ZpRgUDyTSFC3bFH5tSEFAQW0MtgoIvi5zNwFlsNWzc5AsGtXoU5p3jsTV5E3exaSF4AOJnuA/7Ecf8zePXglmvTaUnC1xsZtI8sFF3mJbx8d+MYU51v1jpLZvgnhriQ40QnYlrpBQb4xVv2LRIqORENza6Ey81FI="
+
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
 script: grunt build
+after_success:
+	- .build.sh
