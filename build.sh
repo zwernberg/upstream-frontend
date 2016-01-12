@@ -1,6 +1,12 @@
 #!/bin/bash
-git config user.name "Travis-CI"
-git config user.email "travis@upstream.com"
-git add .
-git commit -m "successful travis build $TRAVIS_BUILD_NUMBER"
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" dev > /dev/null 2>&1
+rm -rf out || exit 0;
+mkdir out; 
+( cd out
+	git clone -b dev "https://${GH_TOKEN}@${GH_REF}" _deploy > /dev/null 2>&1 || exit 1
+ git config user.name "Travis-CI"
+ git config user.email "travis@nodemeatspace.com"
+ cp ../dist ./dist
+ git add .
+ git commit -m "Deployed to Github Pages"
+git push origin dev > /dev/null 2>&1 || exit 1
+)
