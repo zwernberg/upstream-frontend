@@ -1,6 +1,8 @@
 body,html {
   padding: 0;
   background: #f9f9f9;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .container {

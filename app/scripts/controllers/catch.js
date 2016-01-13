@@ -13,7 +13,10 @@ angular.module('upstreamApp')
 	
 	$scope.likePhoto = function(thisCatch){
         thisCatch.likes++;
-        //need to figure out updating in the db
+        thisCatch.$save();
+        
+        
+        
     }
 	
    
