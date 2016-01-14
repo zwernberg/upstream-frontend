@@ -11,4 +11,4 @@ git config user.email "travis-Builder@upstream.dev"
 grunt build
 git add -A
 git commit -m "Deployed to Github"
-git push "https://${GH_TOKEN}@$GITHUB_REPO" dev > /dev/null 2>&1 || exit 1
+git push "https://${GH_TOKEN}@{$GITHUB_REPO}" dev > /dev/null 2>&1 || exit 1
