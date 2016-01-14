@@ -1,7 +1,14 @@
 #!/bin/bash
 rm -rf out || exit 0;
+
+git clone https://${GH_TOKEN}@github.com/zwernberg/upstream-frontend.git
+cd upstream-frontend
+git checkout dev
+bower install
+git status
 git config user.name "Travis-CI"
-git config user.email "travis@upstream.com"
-git add .
-git commit -m "successful travis build $TRAVIS_BUILD_NUMBER"
-git push -fq origin master > /dev/null
+git config user.email "travis-Builder@travis"
+grunt build
+git add -A
+git commit -m "Deployed to Github"
+git push origin dev > /dev/null 2>&1 || exit 1
