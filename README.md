@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zwernberg/upstream-frontend.png)](https://travis-ci.org/zwernberg/upstream-frontend)
+
 # upstream
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
