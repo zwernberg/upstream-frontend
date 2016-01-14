@@ -3,7 +3,6 @@ rm -rf out || exit 0;
 
 git clone https://${GH_TOKEN}@github.com/zwernberg/upstream-frontend.git
 cd upstream-frontend
-git checkout dev
 bower install
 git status
 git config user.name "Travis-CI"
