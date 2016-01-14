@@ -11,4 +11,4 @@ git config user.email "travis-Builder@travis"
 grunt build
 git add -A
 git commit -m "Deployed to Github"
-git push origin dev > /dev/null 2>&1 || exit 1
+git push origin master > /dev/null 2>&1 || exit 1
