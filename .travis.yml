@@ -11,6 +11,5 @@ before_script:
 - bower install
 script:
 - grunt build
-- git status
 after_success:
 - ./build.sh
