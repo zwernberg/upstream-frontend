@@ -9,14 +9,14 @@
  */
 angular.module('upstreamApp')
 .factory('catchService', function ($resource) {
-      var data = $resource('http://162.243.237.149/api/catches/:catch',{catch: "@catch"}, {
-      update:{
+      return $resource('http://162.243.237.149/api/catches/:catch',{catch: "@catch"}, {
+      update: {
           method:'PUT'
           },
-	like: {
+	  like: {
 		method: 'POST',
 		url: 'http://162.243.237.149/api/catches/:catch/like'
-	}
+	      }
       });
-      return data;
+      
   });

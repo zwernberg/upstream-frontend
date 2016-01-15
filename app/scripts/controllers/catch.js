@@ -12,11 +12,8 @@ angular.module('upstreamApp')
     $scope.catches = catchService.query();
 	
 	$scope.likePhoto = function(thisCatch){
-		   	thisCatch.likes++;
-        thisCatch.$like({catch: thisCatch.id});
-        
-        
-        
+		thisCatch.likes++;
+        thisCatch.$like({catch: thisCatch.id});     
     }
 	
    
