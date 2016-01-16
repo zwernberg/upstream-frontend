@@ -1,17 +1,31 @@
 <div class="stream">
-	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">		
-		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
-		<div class="by-line">
-			<h5 class="md-title md-body-3"><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
-			<h5 class="md-title md-body-2">{{catch.created_at | date:short}}</h5>
-		</div>
-		<h4 class="md-display-1">{{catch.title}}</h4>
-                      
-		<div layout="row" layout-align="end" ng-click="likePhoto(catch)">         
-			<md-button class="md-icon-button" aria-label="Favorite" >              
-				<span class="material-icons">favorite_border</span>                            
-			</md-button>
-            <h4>{{catch.likes}}</h4>          
-		</div>
-	</div>
-</div>
+	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">	
+        
+        <img ng-src="{{catch.fishPhoto}}" class="img-responsive">
+        
+        <div class="stream-item-body">
+            	           
+            <div class="by-line">
+                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
+                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.created_at | date:short}}</a></h5>
+            </div>
+                       
+            <div layout> 
+                <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
+                <h4 class="md-subhead">{{catch.likes}} likes</h4> 
+            </div>
+                        
+            
+            <div layout>
+                <md-input-container flex="80">                   
+                    <label>Comment</label>
+                    <input ng-model="user.comment">                  
+                </md-input-container>
+                <div layout="column" layout-align="center end" flex>
+                    <div class="material-icons" aria-label="Favorite" ng-click="likePhoto(catch)">favorite_border</div>
+                </div>
+            </div>
+             
+        </div> 
+	</div>    
+</div> 
