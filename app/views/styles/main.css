@@ -45,7 +45,7 @@ a:link, a:visited, a:hover, a:focus {
 /*BEGIN STYLING FOR THE USER GRID*/
 .user-grid {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
   max-width: 600px;
 }
 .user-grid img {

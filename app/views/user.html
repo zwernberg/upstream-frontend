@@ -1,16 +1,15 @@
-
 <div class="container">
-	<h1 class="md-display-3 text-center">{{user.username}}</h1>
+    <div layout>
+        <h1 class="md-display-2" flex>{{user.username}}</h1>
+        <md-button class="md-primary" ng-show="user.username == currentUser.username">Edit Profile</md-button>
+    </div> 
+
+
+
+    <div class="user-grid" layout-wrap layout="row">
+        <div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
+            <a ng-href="#/user/{{catch.owner}}/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive"></a>
+        </div>
+    </div> 
 </div>
-
-<div class="container" ng-show="user.username == currentUser.username">
-	<md-button class="md-primary">Edit Profile</md-button>
-</div> 
-
-<div class="user-grid" layout-wrap layout="row">
-	<div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
-		<a ng-href="#/user/{{catch.owner}}/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive"></a>
-	</div>
-</div> 
-
 
