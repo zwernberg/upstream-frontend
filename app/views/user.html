@@ -1,6 +1,10 @@
 
-<div class="container text-center">
+<div class="container text-center"ng-hide="user.username == currentUser.username">
 	<h1 class="md-display-3 text-center">Photos by {{user.username}}</h1>
+</div>
+
+<div class="container text-center" ng-show="user.username == currentUser.username">
+	<h1 class="md-display-3 text-center">this is your user profile</h1>
 </div>
 
 <div class="user-grid" layout-wrap layout="row">
@@ -9,19 +13,4 @@
 	</div>
 </div> 
 
-<!-- 
-<div class="stream">
-	<div class="stream-item" ng-repeat="catch in user.catches | orderBy: '-created_at'">
-		
-		<img ng-src="{{catch.fishPhoto}}" class="img-responsive">
-		<div class="by-line">
-			<h5>posted by {{catch.owner}}</h5>
-			<h5>{{catch.created_at | date:short}}</h5>
-		</div>
-		<h4>{{catch.title}}</h4>
-		<md-card-actions layout="row" layout-align="end">
-			<md-button><span class="material-icons">favorite_border</span></md-button>
-		</md-card-actions>
-	</div>
-</div> -->
 

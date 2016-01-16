@@ -8,8 +8,16 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('UserCtrl', function ($scope, userService, $resource, $routeParams) {
+  .controller('UserCtrl', function ($scope, userService, currentUserService, $resource, $routeParams) {
 	var user = userService.get({id: $routeParams.userId}, function() {
    		$scope.user = user;
 	});
+    
+    currentUserService.get( 
+        function (currentUser) {
+            $scope.currentUser = currentUser;
+    });
+    
+    
+    
   });
