@@ -12,4 +12,4 @@ before_script:
 script:
 - git status
 after_success:
-- ./build.sh
+#- ./build.sh
