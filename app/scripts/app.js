@@ -28,7 +28,12 @@ angular
       .when('/', {
         templateUrl: 'views/catch.html',
         controller: 'CatchCtrl',
-        controllerAs: 'catch'
+        controllerAs: 'catch',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }				
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -64,7 +69,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-		$httpProvider.interceptors.push('AuthInterceptor');
     
     $mdThemingProvider.theme('default')
     .primaryPalette('blue')
