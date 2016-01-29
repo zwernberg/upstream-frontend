@@ -182,9 +182,9 @@ angular.module('upstreamApp')
             }
             var da = this;
             var getAuthStatus = $q.defer();
-            if(this.authenticated != null && !force){
+            if($rootScope.authenticated != null && !force){
                 // We have a stored value which means we can pass it back right away.
-                if(this.authenticated == false && restrict){
+                if($rootScope.authenticated == false && restrict){
 					$location.path("/login");
                     getAuthStatus.reject("User is not logged in.");
                 }else{
@@ -194,10 +194,10 @@ angular.module('upstreamApp')
                 // There isn't a stored value, or we're forcing a request back to
                 // the API to get the authentication status.
                 this.authPromise.then(function(){
-                    da.authenticated = true;
+                    $rootScope.authenticated = true;
                     getAuthStatus.resolve();
                 },function(){
-                    da.authenticated = false;
+                    $rootScope.authenticated = false;
                     if(restrict){
 						$location.path("/login");
                         getAuthStatus.reject("User is not logged in.");
