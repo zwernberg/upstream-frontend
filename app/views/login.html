@@ -1,17 +1,27 @@
-<div id="login_view" ng-controller="LoginCtrl">
+<div class="container" >
   <form role="form" ng-submit="login(loginForm)" name="loginForm" novalidate>
-    <div class="form-group">
-      <label for="id_username">Username</label>
-      <input name="username" id="id_username" type="text" ng-model="model.username" placeholder="Username" class="form-control" required />
-    </div>
-    <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
-    <div class="form-group">
-      <label for="id_password">Password</label>
-      <input name="password" id="id_password" type="password" ng-model="model.password" placeholder="Password" class="form-control" required />
-    </div>
-    <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
-    <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
-    <div class="alert alert-danger" ng-if="error">{{error}}</div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <h1 class="md-display-3 text-center">Upstream.</h1>
+    <h1 class="md-display-1 text-center">It's fish all the way down.</h1>
+      
+    <div layout="column">  
+        <md-input-container flex>
+              <label>Username</label>
+              <input autocapitalize="off" ng-model="username" required>
+        </md-input-container>       
+        <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
+        
+        <md-input-container flex>
+              <label>Password</label>
+              <input type="password" autocapitalize="off" ng-model="password" required>
+        </md-input-container>
+        <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
+        <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
+        <div class="alert alert-danger" ng-if="error">{{error}}</div>
+              
+        <md-button type="submit" class="md-raised md-primary">Login</md-button>      
+    </div>   
   </form>
+  
+  <h4 class="md-body-3 text-center">New to Upstream? <a ng-href="#/registration">Create an account.</a></h4>
+  
 </div>

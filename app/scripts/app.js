@@ -16,9 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-		'ngFileUpload',
+	'ngFileUpload',
     'ngMaterial',
-		'LocalStorageModule'
+	'LocalStorageModule'
   ])
 	.config(['localStorageServiceProvider', function(localStorageServiceProvider){
   localStorageServiceProvider.setPrefix('ls');
@@ -42,8 +42,7 @@ angular
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controller: 'LoginCtrl'   
       })
       .when('/catch', {
         templateUrl: 'views/catch.html',
