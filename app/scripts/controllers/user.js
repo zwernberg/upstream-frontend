@@ -8,16 +8,24 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('UserCtrl', function ($scope, userService, currentUserService, $resource, $routeParams) {
-	var user = userService.get({id: $routeParams.userId}, function() {
-   		$scope.user = user;
-	});
-    
-    currentUserService.get( 
-        function (currentUser) {
-            $scope.currentUser = currentUser;
-    });
-    
-    
-    
+  .controller('UserCtrl', function ($scope, djangoAuth, Validate) {
+    $scope.model = {'first_name':'','last_name':'','email':''};
+  	$scope.complete = false;
+  	djangoAuth.profile().then(function(data){
+  		$scope.model = data;
+  	});
+    $scope.updateProfile = function(formData, model){
+      $scope.errors = [];
+      Validate.form_validation(formData,$scope.errors);
+      if(!formData.$invalid){
+        djangoAuth.updateProfile(model)
+        .then(function(data){
+        	// success case
+        	$scope.complete = true;
+        },function(data){
+        	// error case
+        	$scope.error = data;
+        });
+      }
+    }
   });
