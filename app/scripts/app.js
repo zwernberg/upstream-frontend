@@ -53,7 +53,7 @@ angular
         templateUrl: 'views/upload.html',
         controller: 'UploadCtrl'
       })
-      .when('/user/:userId', {
+      .when('/user', {
         templateUrl: 'views/user.html',
         controller: 'UserCtrl'
       })
@@ -64,6 +64,11 @@ angular
       .when('/registration', {
         templateUrl: 'views/registration.html',
         controller: 'RegistrationCtrl'
+      })
+      .when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl',
+        controllerAs: 'logout'
       })
       .otherwise({
         redirectTo: '/'

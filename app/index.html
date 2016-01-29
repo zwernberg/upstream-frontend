@@ -24,14 +24,15 @@
 
     
   </head>
-  <body ng-app="upstreamApp">
-       
-    <md-toolbar layout="row">  
+  <body ng-app="upstreamApp"> 
+    <md-toolbar>  
       <div class="md-toolbar-tools" layout-align="center">      
           <md-button class="material-icons"><a ng-href="#/stream">directions_boat</a></md-button>
           <md-button class="material-icons"><a ng-href="#/upload">add_a_photo</a></md-button>
-          <md-button class="material-icons"><a ng-href="#/search">search</a></md-button>   
-          <md-button class="material-icons"><a ng-href="#/user/2">person</a></md-button>               
+          <!--<md-button class="material-icons"><a ng-href="#/search">search</a></md-button> -->  
+          <md-button class="material-icons"><a ng-href="#/user">person</a></md-button> 
+					<md-button class="material-icons" ng-show="authenticated"><a ng-href="#/logout">settings_power</a></md-button>
+					<md-button class="material-icons" ng-hide="authenticated"><a ng-href="#/login">settings_power</a></md-button>      
       </div>      
     </md-toolbar>   
     
@@ -94,6 +95,7 @@
         <script src="scripts/services/currentuserservice.js"></script>
         <script src="scripts/services/djangoauth.js"></script>
         <script src="scripts/services/validate.js"></script>
+        <script src="scripts/controllers/logout.js"></script>
         <!-- endbuild -->
 
         
