@@ -8,7 +8,7 @@
  * Service in the upstreamApp.
  */
 angular.module('upstreamApp')
-  .service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope, $location) {
+  .service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope, $location, $window) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var service = {
         /* START CUSTOMIZATION HERE */
@@ -23,8 +23,9 @@ angular.module('upstreamApp')
         'authPromise': null,
         'request': function(args) {
             // Let's retrieve the token from the cookie, if available
-            if($cookies.token){
-                $http.defaults.headers.common.Authorization = 'Token ' + $cookies.token;
+            if($window.sessionStorage.token){
+                $http.defaults.headers.common.Authorization = 'Token ' + $window.sessionStorage.token;
+				$rootScope.authenticated = true;
             }
             // Continue
             params = args.params || {}
@@ -97,9 +98,10 @@ angular.module('upstreamApp')
             }).then(function(data){
                 if(!djangoAuth.use_session){
                     $http.defaults.headers.common.Authorization = 'Token ' + data.key;
-                    $cookies.token = data.key;
+                    //$cookies.token = data.key;
+					$window.sessionStorage.token = data.key;	
                 }
-                djangoAuth.authenticated = true;
+                $rootScope.authenticated = true;
                 $rootScope.$broadcast("djangoAuth.logged_in", data);
             });
         },
@@ -110,8 +112,8 @@ angular.module('upstreamApp')
                 'url': "/logout/"
             }).then(function(data){
                 delete $http.defaults.headers.common.Authorization;
-                delete $cookies.token;
-                djangoAuth.authenticated = false;
+                delete $window.sessionStorage.token;
+                $rootScope.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");
             });
         },
