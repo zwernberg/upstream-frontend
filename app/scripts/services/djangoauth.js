@@ -121,6 +121,9 @@ angular.module('upstreamApp')
             }).then(function(data){
                 delete $http.defaults.headers.common.Authorization;
                 delete $window.sessionStorage.token;
+				delete $window.sessionStorage.currentUser;
+				$cookies.remove("sessionid");
+				$cookies.remove("messages");
 				$rootScope.currentUser = '';
                 $rootScope.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");
