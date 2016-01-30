@@ -26,7 +26,10 @@ angular.module('upstreamApp')
             if($window.sessionStorage.token){
                 $http.defaults.headers.common.Authorization = 'Token ' + $window.sessionStorage.token;
 				$rootScope.authenticated = true;
-            }
+            };
+			if($window.sessionStorage.currentUser){
+				$rootScope.currentUser =  JSON.parse($window.sessionStorage.currentUser);
+			};
             // Continue
             params = args.params || {}
             args = args || {};
@@ -101,6 +104,11 @@ angular.module('upstreamApp')
                     //$cookies.token = data.key;
 					$window.sessionStorage.token = data.key;	
                 }
+				djangoAuth.profile().then(function(data){
+  					$rootScope.currentUser = data;
+					$window.sessionStorage.currentUser = angular.toJson(data);
+					console.log($rootScope.currentUser);
+  				});
                 $rootScope.authenticated = true;
                 $rootScope.$broadcast("djangoAuth.logged_in", data);
             });
@@ -113,6 +121,7 @@ angular.module('upstreamApp')
             }).then(function(data){
                 delete $http.defaults.headers.common.Authorization;
                 delete $window.sessionStorage.token;
+				$rootScope.currentUser = '';
                 $rootScope.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");
             });

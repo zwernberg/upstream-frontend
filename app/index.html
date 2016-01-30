@@ -30,7 +30,8 @@
           <md-button class="material-icons"><a ng-href="#/stream">directions_boat</a></md-button>
           <md-button class="material-icons"><a ng-href="#/upload">add_a_photo</a></md-button>
           <!--<md-button class="material-icons"><a ng-href="#/search">search</a></md-button> -->  
-          <md-button class="material-icons"><a ng-href="#/userprofile">person</a></md-button> 
+					
+          <md-button class="material-icons"><a ng-show="authenticated" ng-href="#/user/{{currentUser.id}}">person</a></md-button> 
 					<md-button class="material-icons" ng-show="authenticated"><a ng-href="#/logout">settings_power</a></md-button>
 					<md-button class="material-icons" ng-hide="authenticated"><a ng-href="#/login">settings_power</a></md-button>      
       </div>      
