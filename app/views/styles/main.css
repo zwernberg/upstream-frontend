@@ -1,5 +1,6 @@
 body,html {  
   background: #f9f9f9;
+  height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
   padding: 0;
@@ -37,8 +38,6 @@ a:link, a:visited, a:hover, a:focus {
   width: 600px;
   margin: auto;
 }
-
-
 /*END STYLING FOR THE STREAM CARDS*/
 
 
