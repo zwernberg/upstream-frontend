@@ -47,15 +47,31 @@ angular
       .when('/catch', {
         templateUrl: 'views/catch.html',
         controller: 'CatchCtrl',
-        controllerAs: 'catch'
+        controllerAs: 'catch',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .when('/upload', {
         templateUrl: 'views/upload.html',
-        controller: 'UploadCtrl'
+        controller: 'UploadCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
+
       .when('/user/:userId', {
         templateUrl: 'views/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .when('/search', {
         templateUrl: 'views/search.html',
@@ -73,6 +89,11 @@ angular
       .when('/userprofile', {
         templateUrl: 'views/userprofile.html',
         controller: 'UserprofileCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .otherwise({
         redirectTo: '/'
@@ -81,5 +102,8 @@ angular
     $mdThemingProvider.theme('default')
     .primaryPalette('blue')
     .accentPalette('orange');
+  })
+	.run(function(djangoAuth){
+    djangoAuth.initialize('//162.243.237.149/rest-auth', false);
   });
-
+	
