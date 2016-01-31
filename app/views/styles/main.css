@@ -1,9 +1,8 @@
 body,html {  
-  background: #f9f9f9;
-  height: 100vh;
+  background: #f9f9f9; 
   max-width: 100%;
   overflow-x: hidden;
-  padding: 0;
+  padding: 0; 
 }
 a:link, a:visited, a:hover, a:focus {
     text-decoration: none;
@@ -55,5 +54,8 @@ a:link, a:visited, a:hover, a:focus {
 }
 /*END STYLING FOR THE USER GRID*/
 
-
+md-fab-speed-dial {
+    position: fixed !important;
+    bottom: 20px !important;
+}
 
