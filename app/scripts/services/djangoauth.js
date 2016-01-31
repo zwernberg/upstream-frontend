@@ -91,6 +91,9 @@ angular.module('upstreamApp')
         },
         'login': function(username,password){
             var djangoAuth = this;
+			delete $http.defaults.headers.common.Authorization;
+			delete $window.sessionStorage.token;
+			delete $window.sessionStorage.currentUser;			
             return this.request({
                 'method': "POST",
                 'url': "/login/",
