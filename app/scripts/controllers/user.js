@@ -13,11 +13,12 @@ angular.module('upstreamApp')
    		$scope.user = user;
 	});
     
-    currentUserService.get( 
-        function (currentUser) {
-            $scope.currentUser = currentUser;
-    });
-    
+	$scope.follow = function(currentUser){
+        userService.follow({id: currentUser.id});     
+    }
+	$scope.unfollow = function(currentUser){
+        userService.unfollow({id: currentUser.id});     
+    }   	   
     
     
   });
