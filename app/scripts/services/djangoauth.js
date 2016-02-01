@@ -23,12 +23,12 @@ angular.module('upstreamApp')
         'authPromise': null,
         'request': function(args) {
             // Let's retrieve the token from the cookie, if available
-            if($window.sessionStorage.token){
-                $http.defaults.headers.common.Authorization = 'Token ' + $window.sessionStorage.token;
+            if($cookies.get('token')){
+                $http.defaults.headers.common.Authorization = 'Token ' + JSON.parse($cookies.get('token'));
 				$rootScope.authenticated = true;
             };
-			if($window.sessionStorage.currentUser){
-				$rootScope.currentUser =  JSON.parse($window.sessionStorage.currentUser);
+			if($cookies.get('currentUser')){
+				$rootScope.currentUser = JSON.parse($cookies.get('currentUser'));
 			};
             // Continue
             params = args.params || {}
@@ -93,7 +93,7 @@ angular.module('upstreamApp')
             var djangoAuth = this;
 			delete $http.defaults.headers.common.Authorization;
 			delete $window.sessionStorage.token;
-			delete $window.sessionStorage.currentUser;			
+			delete $window.sessionStorage.currentUser			
             return this.request({
                 'method': "POST",
                 'url': "/login/",
@@ -104,12 +104,12 @@ angular.module('upstreamApp')
             }).then(function(data){
                 if(!djangoAuth.use_session){
                     $http.defaults.headers.common.Authorization = 'Token ' + data.key;
-                    //$cookies.token = data.key;
-					$window.sessionStorage.token = data.key;	
+					var tokenString = JSON.stringify(data.key);
+					$cookies.putObject('token', data.key);
                 }
 				djangoAuth.profile().then(function(data){
   					$rootScope.currentUser = data;
-					$window.sessionStorage.currentUser = angular.toJson(data);
+					$cookies.put('currentUser', angular.toJson(data))
 					console.log($rootScope.currentUser);
   				});
                 $rootScope.authenticated = true;
@@ -118,15 +118,16 @@ angular.module('upstreamApp')
         },
         'logout': function(){
             var djangoAuth = this;
+			delete $http.defaults.headers.common.Authorization;
+			$cookies.remove("currentUser");
+			$cookies.remove("token");
             return this.request({
                 'method': "POST",
                 'url': "/logout/"
             }).then(function(data){
                 delete $http.defaults.headers.common.Authorization;
-                delete $window.sessionStorage.token;
-				delete $window.sessionStorage.currentUser;
-				$cookies.remove("sessionid");
-				$cookies.remove("messages");
+				$cookies.remove("currentUser");
+				$cookies.remove("token");
 				$rootScope.currentUser = '';
                 $rootScope.authenticated = false;
                 $rootScope.$broadcast("djangoAuth.logged_out");
