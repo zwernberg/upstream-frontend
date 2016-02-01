@@ -9,5 +9,8 @@
  */
 angular.module('upstreamApp')
   .controller('LogoutCtrl', function ($scope, $location, djangoAuth) {
-    djangoAuth.logout();
+    djangoAuth.logout()
+		.then(function(){
+			$location.path("/login");
+		})
   });
