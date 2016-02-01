@@ -24,16 +24,34 @@
 
     
   </head>
-  <body ng-app="upstreamApp">
-       
-    <md-toolbar layout="row">  
-      <div class="md-toolbar-tools" layout-align="center">      
-          <md-button class="material-icons"><a ng-href="#/stream">directions_boat</a></md-button>
-          <md-button class="material-icons"><a ng-href="#/upload">add_a_photo</a></md-button>
-          <md-button class="material-icons"><a ng-href="#/search">search</a></md-button>   
-          <md-button class="material-icons"><a ng-href="#/user/2">person</a></md-button>               
-      </div>      
-    </md-toolbar>   
+  <body ng-app="upstreamApp" ng-cloak="" >
+     
+        <md-toolbar ng-show="authenticated">  
+            <div class="md-toolbar-tools"  layout-align="center">      
+                <a ng-href="#/stream">// upstream</a>
+                <div flex></div>
+                <!--<md-button class="material-icons"><a ng-href="#/search">search</a></md-button> -->  
+                            
+                <md-button class="material-icons" ><a  ng-href="#/user/{{currentUser.id}}">person</a></md-button> 
+                <md-button class="material-icons" ng-show="authenticated"><a ng-href="#/logout">settings_power</a></md-button>
+                <md-button class="material-icons" ng-hide="authenticated"><a ng-href="#/login">settings_power</a></md-button>                  
+            </div>      
+        </md-toolbar>  
+         
+        <md-fab-speed-dial md-direction="up" class="md-fab-bottom-right md-fling" ng-show="authenticated">
+            <md-fab-trigger>
+                <md-button aria-label="Add" class="md-fab md-primary material-icons">add</md-button>
+            </md-fab-trigger>
+            
+            <md-fab-actions>
+                <md-button aria-label="Photo" class="md-fab md-raised md-mini material-icons">
+                    <a ng-href="#/upload">insert_photo</a>
+                </md-button>
+                <md-button aria-label="Trip" class="md-fab md-raised md-mini material-icons">
+                    <a ng-href="#/upload">directions_boat</a>
+                </md-button>      
+            </md-fab-actions>
+        </md-fab-speed-dial>    
     
     
     <div ng-view=""></div>
@@ -92,6 +110,10 @@
         <script src="scripts/controllers/registration.js"></script>
         <script src="scripts/services/registerservice.js"></script>
         <script src="scripts/services/currentuserservice.js"></script>
+        <script src="scripts/services/djangoauth.js"></script>
+        <script src="scripts/services/validate.js"></script>
+        <script src="scripts/controllers/logout.js"></script>
+        <script src="scripts/controllers/userprofile.js"></script>
         <!-- endbuild -->
 
         

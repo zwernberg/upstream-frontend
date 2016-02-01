@@ -1,10 +1,12 @@
 <div class="container">
     <div layout>
         <h1 class="md-display-2" flex>{{user.username}}</h1>
-        <md-button class="md-primary" ng-show="user.username == currentUser.username">Edit Profile</md-button>
+        <md-button class="md-primary" ng-href="#/userprofile" ng-show="user.username == currentUser.username">Edit Profile</md-button>
     </div> 
 
-
+		<h2>following: {{user.following}} </h2>
+		 <div class="material-icons" aria-label="Favorite" ng-hide="user.following == true" ng-click="follow(user)">person_add</div>
+		 <div class="material-icons" aria-label="Favorite" ng-show="user.following == true" ng-click="unfollow(user)">mood_bad</div>
 
     <div class="user-grid" layout-wrap layout="row">
         <div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
@@ -12,4 +14,3 @@
         </div>
     </div> 
 </div>
-
