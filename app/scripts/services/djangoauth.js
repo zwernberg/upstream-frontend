@@ -8,7 +8,7 @@
  * Service in the upstreamApp.
  */
 angular.module('upstreamApp')
-  .service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope, $location, $window) {
+  .service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope, $location) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var service = {
         /* START CUSTOMIZATION HERE */
@@ -92,8 +92,8 @@ angular.module('upstreamApp')
         'login': function(username,password){
             var djangoAuth = this;
 			delete $http.defaults.headers.common.Authorization;
-			delete $window.sessionStorage.token;
-			delete $window.sessionStorage.currentUser			
+			$cookies.remove("currentUser");
+			$cookies.remove("token");			
             return this.request({
                 'method': "POST",
                 'url': "/login/",
