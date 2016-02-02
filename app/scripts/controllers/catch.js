@@ -18,7 +18,8 @@ angular.module('upstreamApp')
      
 	
 	$scope.likePhoto = function(thisCatch){
-		thisCatch.likes++;
+		thisCatch.likes += thisCatch.liked ? -1 : 1
+		thisCatch.liked = !thisCatch.liked;
         thisCatch.$like({catch: thisCatch.id});     
     }
 	
