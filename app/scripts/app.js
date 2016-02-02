@@ -16,9 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-		'ngFileUpload',
+	'ngFileUpload',
     'ngMaterial',
-		'LocalStorageModule'
+	'LocalStorageModule'
   ])
 	.config(['localStorageServiceProvider', function(localStorageServiceProvider){
   localStorageServiceProvider.setPrefix('ls');
@@ -28,7 +28,12 @@ angular
       .when('/', {
         templateUrl: 'views/catch.html',
         controller: 'CatchCtrl',
-        controllerAs: 'catch'
+        controllerAs: 'catch',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }				
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -37,21 +42,36 @@ angular
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controller: 'LoginCtrl'   
       })
       .when('/catch', {
         templateUrl: 'views/catch.html',
         controller: 'CatchCtrl',
-        controllerAs: 'catch'
+        controllerAs: 'catch',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .when('/upload', {
         templateUrl: 'views/upload.html',
-        controller: 'UploadCtrl'
+        controller: 'UploadCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
+
       .when('/user/:userId', {
         templateUrl: 'views/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .when('/search', {
         templateUrl: 'views/search.html',
@@ -61,13 +81,29 @@ angular
         templateUrl: 'views/registration.html',
         controller: 'RegistrationCtrl'
       })
+      .when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl',
+        controllerAs: 'logout'
+      })
+      .when('/userprofile', {
+        templateUrl: 'views/userprofile.html',
+        controller: 'UserprofileCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
+      })
       .otherwise({
         redirectTo: '/'
       });
-		$httpProvider.interceptors.push('AuthInterceptor');
     
     $mdThemingProvider.theme('default')
     .primaryPalette('blue')
     .accentPalette('orange');
+  })
+	.run(function(djangoAuth){
+    djangoAuth.initialize('//162.243.237.149/rest-auth', false);
   });
-
+	
