@@ -8,17 +8,23 @@
  * Controller of the frontendApp
  */
 angular.module('upstreamApp')
-  .controller('LoginCtrl', function ($scope, loginService, $location, $http, $resource, $window) {
-		$scope.username = '';
-		$scope.password = '';
-		
-		$scope.loginUser = function () {
-			$scope.login = loginService.save({'username': $scope.username,
-			'password': $scope.password},function(res){
-				var token = "token " + res.token;
-          		$http.defaults.headers.common['Authorization'] = token;
-        		$window.sessionStorage.token = token;		 
-				$location.path("/");
-			});
-		}
+  .controller('LoginCtrl', function ($scope, $location, djangoAuth, Validate) {
+    $scope.username = '';
+    $scope.password = '';   
+  	$scope.complete = false;
+      
+    $scope.login = function(formData){
+      $scope.errors = [];
+      Validate.form_validation(formData,$scope.errors);
+      if(!formData.$invalid){
+        djangoAuth.login($scope.username, $scope.password)
+        .then(function(data){
+        	// success case
+        	$location.path("/");
+        },function(data){
+        	// error case
+        	$scope.errors = data;
+        });
+      }
+    }
   });
