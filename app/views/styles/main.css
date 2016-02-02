@@ -56,6 +56,7 @@ a:link, a:visited, a:hover, a:focus {
 
 md-fab-speed-dial {
     position: fixed !important;
-    bottom: 20px !important;
+    bottom: 15px !important;
+    right: 3vw !important;
 }
 
