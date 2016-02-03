@@ -22,7 +22,7 @@
                     <input ng-model="user.comment">                  
                 </md-input-container>
                 <div layout="column" layout-align="center end" flex>
-                    <div class="material-icons" aria-label="Favorite" ng-click="likePhoto(catch)">favorite_border</div>
+                    <div class="material-icons" aria-label="Favorite"  ng-style="{ 'color' : (catch.liked) ? 'red' : 'black' }" ng-click="likePhoto(catch)">favorite_border</div>
                 </div>
             </div>
              

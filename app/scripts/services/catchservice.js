@@ -13,10 +13,14 @@ angular.module('upstreamApp')
       update: {
           method:'PUT'
           },
-	  like: {
+	like: {
 		method: 'POST',
 		url: 'http://162.243.237.149/api/catches/:catch/like'
-	      }
+	      },
+	unlike: {
+		method: 'POST',
+		url: 'http://162.243.237.149/api/catches/:catch/unlike'		
+	}
       });
       
   });
