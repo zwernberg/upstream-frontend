@@ -3,7 +3,10 @@ body,html {
   max-width: 100%;
   overflow-x: hidden;
   padding: 0; 
+	-webkit-overflow-scrolling: touch;    
 }
+
+
 a:link, a:visited, a:hover, a:focus {
     text-decoration: none;
 } 
