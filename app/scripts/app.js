@@ -10,6 +10,7 @@
  */
 angular
   .module('upstreamApp', [
+    'angularMoment',
     'ngAnimate',
     'ngCookies',
     'ngResource',

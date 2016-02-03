@@ -3,29 +3,24 @@
         
         <img ng-src="{{catch.fishPhoto}}" class="img-responsive">
         
-        <div class="stream-item-body">
-            	                    
+        <div class="stream-item-body">            	                    
             <div layout> 
                 <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
-                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.created_at | date:short}}</a></h5>
-            </div>
-                       
+                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}" am-time-ago="catch.created_at"></a></h5>
+            </div>                      
             <div layout> 
                 <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
                 <h4 class="md-subhead">{{catch.likes}} likes</h4> 
-            </div>
-                        
-            
+            </div>                    
             <div layout>
                 <md-input-container flex="80">                   
                     <label>Comment</label>
                     <input ng-model="user.comment">                  
-                </md-input-container>
+                </md-input-container>                           
                 <div layout="column" layout-align="center end" flex>
                     <div class="material-icons" aria-label="Favorite"  ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
                 </div>
-            </div>
-             
+            </div>            
         </div> 
 	</div>    
 </div>
