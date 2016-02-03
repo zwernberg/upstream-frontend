@@ -4,9 +4,9 @@
         <img ng-src="{{catch.fishPhoto}}" class="img-responsive">
         
         <div class="stream-item-body">
-            	           
-            <div class="by-line">
-                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
+            	                    
+            <div layout> 
+                <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
                 <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.created_at | date:short}}</a></h5>
             </div>
                        

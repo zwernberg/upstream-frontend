@@ -100,7 +100,9 @@ angular
       });
     
     $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
+    .primaryPalette('blue', {
+        'default': '800'
+    })
     .accentPalette('orange');
   })
 	.run(function(djangoAuth){
