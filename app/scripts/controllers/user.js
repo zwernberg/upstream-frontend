@@ -14,11 +14,16 @@ angular.module('upstreamApp')
 	});
     
 	$scope.follow = function(currentUser){
-        userService.follow({id: currentUser.id});     
+        if (user.following == false) {
+            userService.follow({id: currentUser.id});
+            user.following = true;
+        }
+        else {
+            userService.unfollow({id: currentUser.id});
+            user.following = false;
+        }
     }
-	$scope.unfollow = function(currentUser){
-        userService.unfollow({id: currentUser.id});     
-    }   	   
+		   
     
     
   });

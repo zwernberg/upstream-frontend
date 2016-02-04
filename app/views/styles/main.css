@@ -34,7 +34,12 @@ a:link, a:visited, a:hover, a:focus {
 /*END STYLING FOR THE STREAM CARDS*/
 
 
-/*BEGIN STYLING FOR THE USER GRID*/
+/*BEGIN STYLING FOR THE USER PROFILE*/
+.user-card {
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);   
+  margin-bottom: 35px;
+  padding: 8px;
+}
 .user-grid {
   margin: auto;
   margin-top: 50px;
@@ -46,7 +51,7 @@ a:link, a:visited, a:hover, a:focus {
   margin-bottom: 5px;
   width: 95%;
 }
-/*END STYLING FOR THE USER GRID*/
+/*END STYLING FOR THE USER PROFILE*/
 
 md-fab-speed-dial {
     position: fixed !important;
