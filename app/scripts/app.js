@@ -107,6 +107,6 @@ angular
     .accentPalette('orange');
   })
 	.run(function(djangoAuth){
-    djangoAuth.initialize('//162.243.237.149/rest-auth', false);
+    djangoAuth.initialize('//angler.online/api/rest-auth', false);
   });
 	
