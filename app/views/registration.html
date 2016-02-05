@@ -1,26 +1,26 @@
 <div id="register_view" class="container">
 	<h1 class="md-display-3 text-center">A new angler is born.</h1>
-    <div ng-if="complete == false">
+    <div ng-if="complete == false" layout="column">
         <form role="form" ng-if="authenticated != true" name="registerForm" ng-submit="register(registerForm)" novalidate>
-            <div class="form-group">
+           <md-input-container flex>
                 <label for="id_username">Username</label>
-                <input name="username" id="id_username" class="form-control" type="text" ng-model="model.username" placeholder="Username" required />
-            </div>
+                <input name="username" id="id_username" class="form-control" type="text" ng-model="model.username"  required />
+            </md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
-            <div class="form-group">
+           <md-input-container flex>
                 <label for="id_password">Password</label>
-                <input name="password1" id="id_password1" class="form-control" type="password" ng-model="model.password1" placeholder="Password" required />
-            </div>
+                <input name="password1" id="id_password1" class="form-control" type="password" ng-model="model.password1"  required />
+           </md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.password1">{{error}}</div>
-            <div class="form-group">
+           <md-input-container flex>
                 <label for="id_password">Repeat Password</label>
-                <input name="password" id="id_password2" class="form-control" type="password" ng-model="model.password2" placeholder="Repeat Password" required />
-            </div>
+                <input name="password" id="id_password2" class="form-control" type="password" ng-model="model.password2"  required />
+           </md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.password2">{{error}}</div>
-            <div class="form-group">
+           <md-input-container flex>
                 <label for="id_email">Email</label>
-                <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email" placeholder="Email" required />
-            </div>
+                <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email"  required />
+           </md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
             <button ng-hide="authenticated" type="submit" class="btn btn-primary">Register</button>
         </form>
