@@ -8,19 +8,21 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('RegistrationCtrl', function ($scope, loginService, $http, $window, $location, registerService) {
-	  
-			$scope.registerUser = function () {
-				if ($scope.password1.length > 5 && $scope.password1 == $scope.password2)
-					$scope.register = registerService.save({'username': $scope.username,
-					'password1': $scope.password1,'password2': $scope.password2},function(res){
-					}, 
-					function(successResult) {	 
-								$location.path("/");
-					}, function(errorResult) {
-						// do something on error
-						if(errorResult.status === 404) {            
-						}
-					});
-			};
+  .controller('RegistrationCtrl', function ($scope, djangoAuth, Validate) {
+  	$scope.model = {'username':'','password':'','email':''};
+  	$scope.complete = false;
+    $scope.register = function(formData){
+      $scope.errors = [];
+      Validate.form_validation(formData,$scope.errors);
+      if(!formData.$invalid){
+        djangoAuth.register($scope.model.username,$scope.model.password1,$scope.model.password2,$scope.model.email)
+        .then(function(data){
+        	// success case
+        	$scope.complete = true;
+        },function(data){
+        	// error case
+        	$scope.errors = data;
+        });
+      }
+    }
   });
