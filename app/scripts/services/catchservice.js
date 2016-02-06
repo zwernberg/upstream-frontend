@@ -14,7 +14,7 @@ angular.module('upstreamApp')
 		// 		return data.results;
 		// 	}
 		// });
-	return $resource('http://angler.online/api/catches/:catch',{catch: "@catch"}, {
+	return $resource('http://angler.online/api/catches/:catchId',{catchId: "@catchId"}, {
 		query: {
 			isArray: true,
 			method: 'GET',
@@ -28,11 +28,11 @@ angular.module('upstreamApp')
 			},
 			like: {
 				method: 'POST',
-				url: 'http://angler.online/api/catches/:catch/like'
+				url: 'http://angler.online/api/catches/:catchId/like'
 			},
 			unlike: {
 				method: 'POST',
-				url: 'http://angler.online/api/catches/:catch/unlike'		
+				url: 'http://angler.online/api/catches/:catchId/unlike'		
 			}
 	});
       

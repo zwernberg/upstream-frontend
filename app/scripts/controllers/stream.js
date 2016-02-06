@@ -2,15 +2,14 @@
 
 /**
  * @ngdoc function
- * @name upstreamApp.controller:CatchCtrl
+ * @name upstreamApp.controller:StreamCtrl
  * @description
- * # CatchCtrl
+ * # StreamCtrl
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('CatchCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
-	var vm = this;
-    vm.catch = catchService.get({catchId: $routeParams.catchId});
+  .controller('StreamCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
+    $scope.catches = catchService.query();
     
      
 	

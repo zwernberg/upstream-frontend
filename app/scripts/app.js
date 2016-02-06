@@ -27,9 +27,9 @@ angular
   .config(function ($routeProvider, $httpProvider, $mdThemingProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/catch.html',
-        controller: 'CatchCtrl',
-        controllerAs: 'catch',
+        templateUrl: 'views/stream.html',
+        controller: 'StreamCtrl',
+        controllerAs: 'stream',
         resolve: {
           authenticated: ['djangoAuth', function(djangoAuth){
             return djangoAuth.authenticationStatus(true);
@@ -45,10 +45,10 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'   
       })
-      .when('/catch', {
+      .when('/catch/:catchId', {
         templateUrl: 'views/catch.html',
         controller: 'CatchCtrl',
-        controllerAs: 'catch',
+        controllerAs: 'vm',
         resolve: {
           authenticated: ['djangoAuth', function(djangoAuth){
             return djangoAuth.authenticationStatus(true);
@@ -95,6 +95,11 @@ angular
             return djangoAuth.authenticationStatus(true);
           }],
         }		
+      })
+      .when('/stream', {
+        templateUrl: 'views/stream.html',
+        controller: 'StreamCtrl',
+        controllerAs: 'stream'
       })
       .otherwise({
         redirectTo: '/'
