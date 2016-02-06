@@ -4,8 +4,8 @@
         
         <div class="stream-item-body">            	                    
             <div layout> 
-                <h5 class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{catch.owner.username}}</a></h5>
-                <h5 class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}" am-time-ago="catch.created_at"></a></h5>
+                <h5 class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></h5>
+                <h5 class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}" am-time-ago="vm.catch.created_at"></a></h5>
             </div>                      
             <div layout> 
                 <h4 class="md-subhead" flex>{{vm.catch.title}}</h4>                                                                                                      
