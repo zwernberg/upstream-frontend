@@ -14,18 +14,26 @@ angular.module('upstreamApp')
 		// 		return data.results;
 		// 	}
 		// });
-      return $resource('http://angler.online/api/catches/:catch',{catch: "@catch"}, {
-      update: {
-          method:'PUT'
-          },
-	like: {
-		method: 'POST',
-		url: 'http://angler.online/api/catches/:catch/like'
-	      },
-	unlike: {
-		method: 'POST',
-		url: 'http://angler.online/api/catches/:catch/unlike'		
-	}
-      });
+	return $resource('http://angler.online/api/catches/:catch',{catch: "@catch"}, {
+		query: {
+			isArray: true,
+			method: 'GET',
+			params: {},
+			transformResponse: function (data) {
+				return angular.fromJson(data).results
+			}
+		},	  
+		update: {
+			method:'PUT'
+			},
+			like: {
+				method: 'POST',
+				url: 'http://angler.online/api/catches/:catch/like'
+			},
+			unlike: {
+				method: 'POST',
+				url: 'http://angler.online/api/catches/:catch/unlike'		
+			}
+	});
       
   });
