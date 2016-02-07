@@ -4,29 +4,36 @@
             <div layout>
                 <img src="avatar.png" alt="avatar" flex="none" /> 
                 <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
-                <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}" am-time-ago="catch.created_at"></a></h5>
-            </div>                    
-            <div layout> 
-                <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
-                <h4 class="md-subhead">{{catch.likes}} likes</h4> 
-            </div>  
+                <h4 class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }">{{catch.likes}}</h4> 
+                <div layout="column" layout-align="center end">
+                    <div class="material-icons" aria-label="Favorite"  ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
+                </div>
+            </div> 
         </div>
-		        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>
-	
-		<md-list-item class="md-3-line" ng-repeat="comment in catch.comments">
-        <div class="md-list-item-text">
-          <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5>
-            {{ comment.text }}
-        </div>
-      </md-list-item>                  
+        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>
+        
+        <div class="stream-item-body">            	                    
+                                
+            <div layout>
+                <div layout="column" flex>
+                    <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">Lake Michigan</a></h5>
+                    <h4 class="md-subhead">{{catch.title}}</h4>
+                 </div>                                                                                                      
+                <h5 class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></h5>
+            </div>
+            
+                        <md-list-item class="md-3-line" ng-repeat="comment in catch.comments">
+            <div class="md-list-item-text">
+            <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5>
+                {{ comment.text }}
+            </div></md-list-item>
+                                
             <div layout>
                 <md-input-container flex="80">                   
                     <label>Comment</label>
                     <input ng-model="user.comment">                  
                 </md-input-container>                           
-                <div layout="column" layout-align="center end" flex>
-                    <div class="material-icons" aria-label="Favorite"  ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
-                </div>
+                
             </div>            
         </div> 
 	</div>    
@@ -46,3 +53,4 @@
         </md-button>
     </md-fab-actions>
 </md-fab-speed-dial> 
+
