@@ -33,7 +33,9 @@
                     <label>Comment</label>
                     <input ng-model="user.comment">
                 </md-input-container>
-
+                <div layout="column" layout-align="center end" ng-show="user.comment.length > 0">
+                    <md-button class="md-raised md-primary" ng-click="postComment(comment)">Submit</md-button>
+                </div>
             </div>
         </div>
     </div>
