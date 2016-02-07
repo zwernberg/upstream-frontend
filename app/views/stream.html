@@ -1,10 +1,8 @@
 <div class="stream">
 	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">	
-        
-        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive"></a>
-        
-        <div class="stream-item-body">            	                    
-            <div layout> 
+        <div class="stream-item-body">
+            <div layout>
+                <img src="avatar.png" alt="avatar" flex="none" /> 
                 <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
                 <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}" am-time-ago="catch.created_at"></a></h5>
             </div>                    
@@ -12,6 +10,9 @@
                 <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
                 <h4 class="md-subhead">{{catch.likes}} likes</h4> 
             </div>  
+        </div>
+		        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>
+	
 		<md-list-item class="md-3-line" ng-repeat="comment in catch.comments">
         <div class="md-list-item-text">
           <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5>
