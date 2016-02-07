@@ -1,16 +1,23 @@
 <div class="stream">
 	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">	
-        
-        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive"></a>
+        <div class="stream-item-body">
+            <div layout>
+                <img src="avatar.png" alt="avatar" flex="none" /> 
+                <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
+                <h4 class="md-subhead">{{catch.likes}} likes</h4> 
+                
+            </div> 
+        </div>
+        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>
         
         <div class="stream-item-body">            	                    
-            <div layout> 
-                <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
+                                
+            <div layout>
+                <div layout="column" flex>
+                    <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">Lake Michigan</a></h5>
+                    <h4 class="md-subhead">{{catch.title}}</h4>
+                 </div>                                                                                                      
                 <h5 class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></h5>
-            </div>                      
-            <div layout> 
-                <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
-                <h4 class="md-subhead">{{catch.likes}} likes</h4> 
             </div>                    
             <div layout>
                 <md-input-container flex="80">                   

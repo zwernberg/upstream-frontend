@@ -1,16 +1,24 @@
 <div class="stream">
-   <div class="stream-item">     
-        <img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive">
+   <div class="stream-item"> 
+        <div class="stream-item-body">
+            <div layout>
+                <img src="avatar.png" alt="avatar" flex="none" /> 
+                <h5 class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></h5>
+                <h4 class="md-subhead">{{vm.catch.likes}} likes</h4> 
+                
+            </div> 
+        </div>               
+        <img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo">
         
         <div class="stream-item-body">            	                    
             <div layout> 
-                <h5 class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></h5>
+                <div layout="column" flex>
+                    <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">Lake Michigan</a></h5>
+                    <h4 class="md-subhead">{{vm.catch.title}}</h4>
+                </div>                 
                 <h5 class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}" am-time-ago="vm.catch.created_at"></a></h5>
             </div>                      
-            <div layout> 
-                <h4 class="md-subhead" flex>{{vm.catch.title}}</h4>                                                                                                      
-                <h4 class="md-subhead">{{vm.catch.likes}} likes</h4> 
-            </div>                    
+                   
             <div layout>
                 <md-input-container flex="80">                   
                     <label>Comment</label>
