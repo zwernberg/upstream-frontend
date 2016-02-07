@@ -26,14 +26,18 @@ angular.module('upstreamApp')
 		update: {
 			method:'PUT'
 			},
-			like: {
-				method: 'POST',
-				url: 'http://angler.online/api/catches/:catchId/like'
-			},
-			unlike: {
-				method: 'POST',
-				url: 'http://angler.online/api/catches/:catchId/unlike'		
-			}
+		like: {
+			method: 'POST',
+			url: 'http://angler.online/api/catches/:catchId/like'
+		},
+		unlike: {
+			method: 'POST',
+			url: 'http://angler.online/api/catches/:catchId/unlike'		
+		},
+		comment: {
+			method: 'POST',
+			url: 'http//angler.online/api/catches/:catchId/comment'
+		}
 	});
       
   });

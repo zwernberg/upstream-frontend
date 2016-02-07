@@ -7,11 +7,17 @@
             <div layout> 
                 <h5 class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></h5>
                 <h5 class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}" am-time-ago="catch.created_at"></a></h5>
-            </div>                      
+            </div>                    
             <div layout> 
                 <h4 class="md-subhead" flex>{{catch.title}}</h4>                                                                                                      
                 <h4 class="md-subhead">{{catch.likes}} likes</h4> 
-            </div>                    
+            </div>  
+		<md-list-item class="md-3-line" ng-repeat="comment in catch.comments">
+        <div class="md-list-item-text">
+          <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5>
+            {{ comment.text }}
+        </div>
+      </md-list-item>                  
             <div layout>
                 <md-input-container flex="80">                   
                     <label>Comment</label>
