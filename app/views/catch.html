@@ -22,7 +22,7 @@
                 <h5 class="md-body-1"><a ng-href="#/catch/{{vm.catch.id}}" am-time-ago="vm.catch.created_at"></a></h5>
             </div>
 
-            <md-list-item class="md-3-line" ng-repeat="comment in catch.comments">
+            <md-list-item class="md-3-line" ng-repeat="comment in vm.catch.comments">
                 <div class="md-list-item-text">
                     <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5> {{ comment.text }}
                 </div>
@@ -31,10 +31,10 @@
             <div layout>
                 <md-input-container flex="80">
                     <label>Comment</label>
-                    <input ng-model="user.comment">
+                    <input ng-model="vm.newComment.text">
                 </md-input-container>
-                <div layout="column" layout-align="center end" ng-show="user.comment.length > 0">
-                    <md-button class="md-raised md-primary" ng-click="postComment(comment)">Submit</md-button>
+                <div layout="column" layout-align="center end" ng-show="vm.newComment.text.length > 0">
+                    <md-button class="md-raised md-primary" ng-click="vm.postComment(vm.newComment.text)">Submit</md-button>
                 </div>
             </div>
         </div>

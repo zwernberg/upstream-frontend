@@ -8,11 +8,23 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('CatchCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
+  .controller('CatchCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $rootScope, $timeout) {
 	var vm = this;
     vm.catch = catchService.get({catchId: $routeParams.catchId});
     
-     
+    vm.postComment = function(comment){
+		vm.newComment = {
+			'owner': {
+				'id': $rootScope.currentUser.id,
+				'username' : $rootScope.currentUser.username	
+			},
+			'text': comment
+		}
+	   catchService.comment({catchId:vm.catch.id},{'text':vm.newComment.text}, function () {
+			vm.catch.comments.push(vm.newComment);
+			vm.newComment = '';   
+	   });
+   }
 	
 	$scope.likePhoto = function(thisCatch){
 		if (thisCatch.liked){
@@ -26,6 +38,7 @@ angular.module('upstreamApp')
 			thisCatch.liked = true;
 		}
     }
+	
 	
    
   });

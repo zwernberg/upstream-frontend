@@ -36,7 +36,7 @@ angular.module('upstreamApp')
 		},
 		comment: {
 			method: 'POST',
-			url: 'http//angler.online/api/catches/:catchId/comment'
+			url: 'http://angler.online/api/catches/:catchId/comments'
 		}
 	});
       
