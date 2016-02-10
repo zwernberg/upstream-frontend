@@ -19,6 +19,12 @@ a:link, a:visited, a:hover, a:focus {
   margin-top: 50px;
   max-width: 600px;
 }
+.stream a {
+  color: #64B5F6; 
+}
+.stream p {
+  color: #A1A1A1; 
+}
 .stream-item {
   box-shadow: 0px 2px 5px rgba(0,0,0,0.1);   
   margin-bottom: 35px; 

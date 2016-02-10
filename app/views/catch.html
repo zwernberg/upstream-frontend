@@ -3,8 +3,8 @@
         <div class="stream-item-body">
             <div layout>
                 <img src="avatar.png" alt="avatar" flex="none" />
-                <h5 class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></h5>
-                <h4 class="md-subhead" ng-style="{ 'color' : (vm.catch.liked) ? '#ff6666' : '#c2c2d6' }">{{vm.catch.likes}}</h4>
+                <p class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></p>
+                <p class="md-subhead" ng-style="{ 'color' : (vm.catch.liked) ? '#ff6666' : '#c2c2d6' }">{{vm.catch.likes}}</p>
                 <div layout="column" layout-align="center end">
                     <div class="material-icons" aria-label="Favorite" ng-style="{ 'color' : (vm.catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(vm.catch)">favorite</div>
                 </div>
@@ -16,17 +16,15 @@
 
             <div layout>
                 <div layout="column" flex>
-                    <h5 class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}">Lake Michigan</a></h5>
-                    <h4 class="md-subhead">{{vm.catch.title}}</h4>
+                    <p class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}">Lake Michigan</a></p>
+                    <p class="md-subhead">{{vm.catch.title}}</p>
                 </div>
-                <h5 class="md-body-1"><a ng-href="#/catch/{{vm.catch.id}}" am-time-ago="vm.catch.created_at"></a></h5>
+                <p class="md-body-1"><a ng-href="#/catch/{{vm.catch.id}}" am-time-ago="vm.catch.created_at"></a></p>
             </div>
 
-            <md-list-item class="md-3-line" ng-repeat="comment in vm.catch.comments">
-                <div class="md-list-item-text">
-                    <h5><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a></h5> {{ comment.text }}
-                </div>
-            </md-list-item>
+            <div ng-repeat="comment in vm.catch.comments">
+                <p><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
+            </div> 
 
             <div layout>
                 <md-input-container flex="80">
