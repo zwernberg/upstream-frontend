@@ -31,9 +31,9 @@
                 <div flex></div>
                 <!--<md-button class="material-icons"><a ng-href="#/search">search</a></md-button> -->  
                             
-                <md-button class="material-icons" ><a  ng-href="#/user/{{currentUser.id}}">person</a></md-button> 
-                <md-button class="material-icons" ng-show="authenticated"><a ng-href="#/logout">settings_power</a></md-button>
-                <md-button class="material-icons" ng-hide="authenticated"><a ng-href="#/login">settings_power</a></md-button>                  
+                <a  ng-href="#/user/{{currentUser.id}}"><md-button class="material-icons" >person</md-button> </a>
+                <a ng-href="#/logout" g-show="authenticated"><md-button class="material-icons" n>settings_power</md-button></a>
+                <a ng-href="#/login" ng-hide="authenticated"><md-button class="material-icons" >settings_power</md-button></a>                  
             </div>      
         </md-toolbar>  
          
