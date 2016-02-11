@@ -6,23 +6,21 @@ body,html {
   margin: 0;  
   padding: 0; 
 }
-a:link, a:visited, a:hover, a:focus {
-    text-decoration: none;
-    color: #64B5F6;
-} 
-
 .container {
   max-width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-/*BEGIN STYLING FOR LIKING CATCHES*/
-
-.cursorPointer {
-    cursor: pointer;
+a:link, a:visited, a:hover, a:focus {
+  text-decoration: none;
+  color: #64B5F6;
 }
-
+.material-icons {
+  cursor: pointer;
+}
 /*BEGIN STYLING FOR THE STREAM CARDS*/
-
 .stream {
   margin: auto;
   margin-top: 50px;
@@ -94,10 +92,7 @@ img {
   text-align: center;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 @media (min-width: 768px) {
   .container {

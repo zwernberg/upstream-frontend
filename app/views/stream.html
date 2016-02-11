@@ -6,7 +6,7 @@
                 <p class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></p>
                 <p class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }">{{catch.likes}}</p> 
                 <div layout="column" layout-align="center end">
-                    <div class="material-icons cursorPointer" aria-label="Favorite" ng-style="{'cursor': pointer, 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
+                    <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
                 </div>
             </div> 
         </div>
@@ -44,12 +44,8 @@
         </md-fab-trigger>
 
         <md-fab-actions>
-            <md-button aria-label="Photo" class="md-fab md-raised md-mini material-icons">
-                <a ng-href="#/upload">insert_photo</a>
-            </md-button>
-            <md-button aria-label="Trip" class="md-fab md-raised md-mini material-icons">
-                <a ng-href="#/upload">directions_boat</a>
-            </md-button>
+            <a ng-href="#/upload"><md-button aria-label="Photo" class="md-fab md-raised md-mini material-icons">insert_photo</md-button></a>
+            <a ng-href="#/upload"><md-button aria-label="Photo" class="md-fab md-raised md-mini material-icons">directions_boat</md-button></a>                         
         </md-fab-actions>
     </md-fab-speed-dial> 
 </div>
