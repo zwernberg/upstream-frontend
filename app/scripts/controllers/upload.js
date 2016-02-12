@@ -12,7 +12,7 @@ angular.module('upstreamApp')
     $scope.uploadPic = function(file) {
     file.upload = Upload.upload({
       url: 'http://162.243.237.149/api/catches',
-      data: {fishPhoto: file, title: $scope.title},
+      data: {fishPhoto: file, title: $scope.title, location: $scope.location},
     });
 
     file.upload.then(function (response) {

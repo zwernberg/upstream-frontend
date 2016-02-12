@@ -25,7 +25,10 @@
         <md-input-container flex ng-show="picFile" md-no-float>
           <input ng-model="title">
         </md-input-container>
-       
+        <h3 class="md-display-1" ng-show="picFile">Where was this photo taken</h3>
+        <md-input-container flex ng-show="picFile" md-no-float>
+          <input ng-model="location">
+        </md-input-container>    
         
         <div layout="row" flex>
             <md-button class="md-raised md-warn" ng-click="picFile = null" ng-show="picFile" flex>Remove</md-button>              

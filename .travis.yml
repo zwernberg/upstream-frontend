@@ -1,15 +1,15 @@
-# sudo: false
-# language: node_js
-# node_js:
-# - '0.12'
-# env:
-#   global:
-#   - GH_REF: github.com/zwernberg/upstream-frontend.git
-#   - secure: VoucqRwMEFdkVvtDVqCu1Wq98N7duQ0BZLJ3dUCHJcyF8QaQ+sWzPHwsVf01vDI1qzp2D0WB0SmGnuj/Y+IdqKniXhCUQwSbHRAqoUv0aP+cplT1iVJgFrPa72uQ1UXF1TR84EXysvEcPCAE9XIyKAL9qn+53eduh0YBXQO5utCHOSOwFuLfQJJpp8OndDfrSN4ct5gFD4fAgOGkVeBGZ7x90jzQxbFI7B1Y9h811GmRkK1eaKTg6tcoHlGQcLMm3terMxPiu/L2OK0ebwyCQpvi5ngk8LPLpokvjb63O0Td7iBfnnQRfhp8wJsd8T0NoOyATkVaWzHc2OXUImFSRT8ujSQzxHL56WL2OvIpOcvxO8j1NqZex3CmyoCyLen8Mwj39CRqg15ioMCzyViz6qaiSYrhlf+y3hv2zS8BRajtemQBp4dgY/m70Q0CWt7tQMEVlBX7hLbiC4r75qnn//77cVqeAmiy+bie1ppZvM4wjr6v2MtvobfauVRZWPXWH4fG6H867ABJ8Vf0cYsr75fkS8W07/rGX8851TQKlG8l8kZccHUElaNxDxu6o6AjxZfo0zZVmh/wQhZoX8r7CpRgIiF+JwmQulLP7qAHNsJNngBqUBWkLdwMugmEyBUpZFXR3yJd9MFjZJ6WN5Pqes17w3qLL0mirhbR1aidJqI=
-# before_script:
-# - npm install -g bower grunt-cli
-# - bower install
-# script:
-# - git status
-# after_success:
-# #- ./build.sh
+sudo: false
+language: node_js
+node_js:
+- '0.12'
+env:
+  global:
+  - GH_REF: github.com/zwernberg/upstream-frontend.git
+  - secure: VoucqRwMEFdkVvtDVqCu1Wq98N7duQ0BZLJ3dUCHJcyF8QaQ+sWzPHwsVf01vDI1qzp2D0WB0SmGnuj/Y+IdqKniXhCUQwSbHRAqoUv0aP+cplT1iVJgFrPa72uQ1UXF1TR84EXysvEcPCAE9XIyKAL9qn+53eduh0YBXQO5utCHOSOwFuLfQJJpp8OndDfrSN4ct5gFD4fAgOGkVeBGZ7x90jzQxbFI7B1Y9h811GmRkK1eaKTg6tcoHlGQcLMm3terMxPiu/L2OK0ebwyCQpvi5ngk8LPLpokvjb63O0Td7iBfnnQRfhp8wJsd8T0NoOyATkVaWzHc2OXUImFSRT8ujSQzxHL56WL2OvIpOcvxO8j1NqZex3CmyoCyLen8Mwj39CRqg15ioMCzyViz6qaiSYrhlf+y3hv2zS8BRajtemQBp4dgY/m70Q0CWt7tQMEVlBX7hLbiC4r75qnn//77cVqeAmiy+bie1ppZvM4wjr6v2MtvobfauVRZWPXWH4fG6H867ABJ8Vf0cYsr75fkS8W07/rGX8851TQKlG8l8kZccHUElaNxDxu6o6AjxZfo0zZVmh/wQhZoX8r7CpRgIiF+JwmQulLP7qAHNsJNngBqUBWkLdwMugmEyBUpZFXR3yJd9MFjZJ6WN5Pqes17w3qLL0mirhbR1aidJqI=
+before_script:
+- npm install -g bower grunt-cli
+- bower install
+script:
+- git status
+after_success:
+#- ./build.sh
