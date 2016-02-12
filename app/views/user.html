@@ -1,6 +1,7 @@
 <div class="container">
     <div class="user-card">
         <div layout>
+            <img src="avatar.png" alt="avatar" flex="none" />
             <p class="md-title" flex>{{user.username}}</p>
             <div layout="column" layout-align="center end" >
                 <div class="material-icons" aria-label="Favorite" ng-hide="user.username == currentUser.username" ng-click="follow(user)" ng-style="{ 'color' : (user.following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
