@@ -17,6 +17,9 @@ a:link, a:visited, a:hover, a:focus {
   text-decoration: none;
   color: #64B5F6;
 }
+header a {
+  color: white !important; 
+}
 .material-icons {
   cursor: pointer;
 }
