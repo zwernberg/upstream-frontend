@@ -1,7 +1,7 @@
-<div id="register_view" class="container">
-	<h1 class="md-display-3 text-center">A new angler is born.</h1>
-    <div ng-if="complete == false" layout="column">
-        <form role="form" ng-if="authenticated != true" name="registerForm" ng-submit="register(registerForm)" novalidate>
+<div id="register_view" class="container register-form">
+	<p class="md-display-3 text-center">A new angler is born.</p>
+    <div ng-if="complete == false" >
+        <form role="form" ng-if="authenticated != true" name="registerForm" ng-submit="register(registerForm)" layout="column" novalidate>
            <md-input-container flex>
                 <label for="id_username">Username</label>
                 <input name="username" id="id_username" class="form-control" type="text" ng-model="model.username"  required />
@@ -21,8 +21,8 @@
                 <label for="id_email">Email</label>
                 <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email"  required />
            </md-input-container>
-            <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
-            <button ng-hide="authenticated" type="submit" class="btn btn-primary">Register</button>
+           <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
+           <md-button type="submit" class="md-raised md-accent" flex>Register</md-button>
         </form>
         <p ng-if="authenticated">You are already logged in!  You don't need to register.</p>
     </div>

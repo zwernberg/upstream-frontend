@@ -134,3 +134,8 @@ img {
     width: 1170px;
   }
 }
+
+
+.login-form, .register-form {
+    margin-top: 40px;
+}
