@@ -8,7 +8,7 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('UserprofileCtrl', function ($scope, djangoAuth, Validate) {
+  .controller('UserprofileCtrl', function ($scope, djangoAuth, Validate, $location, $rootScope) {
     $scope.model = {'first_name':'','last_name':'','email':''};
   	$scope.complete = false;
   	djangoAuth.profile().then(function(data){
@@ -21,7 +21,7 @@ angular.module('upstreamApp')
         djangoAuth.updateProfile(model)
         .then(function(data){
         	// success case
-        	$scope.complete = true;
+        	$location.path('/user/' + $rootScope.currentUser.id);
         },function(data){
         	// error case
         	$scope.error = data;
