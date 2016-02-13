@@ -17,8 +17,8 @@
                  </div>                                                                                                      
                 <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
             </div>
-            <div ng-repeat="comment in catch.comments">
-                <p><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
+            <div class="comments">
+                <p ng-repeat="comment in catch.comments"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
             </div>                              
             <div layout layout-align="space-between end">
                 <md-input-container flex="60">
