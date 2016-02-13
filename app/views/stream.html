@@ -1,19 +1,15 @@
 <div class="stream">
 	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">	
         <div class="stream-item-body">
-            <div layout layout-align="center center">
-                <img src="avatar.png" alt="avatar" flex="none" /> 
+            <div layout layout-align="center center" >
+                <img src="avatar.png" alt="avatar"/> 
                 <p class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></p>
                 <p class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }">{{catch.likes}}</p> 
-                <div layout="column" layout-align="center end">
-                    <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
-                </div>
+                <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
             </div> 
-        </div>
-        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>
-        
-        <div class="stream-item-body">            	                    
-                                
+        </div>       
+        <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>       
+        <div class="stream-item-body">            	                                                   
             <div layout>
                 <div layout="column" flex>
                     <p class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.location}}</a></p>
@@ -21,23 +17,18 @@
                  </div>                                                                                                      
                 <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
             </div>
-            
             <div ng-repeat="comment in catch.comments">
                 <p><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
-            </div>    
-                                           
-            <div layout>
-                <md-input-container flex="80">
+            </div>                              
+            <div layout layout-align="space-between end">
+                <md-input-container flex="60">
                     <label>Comment</label>
                     <input ng-model="user.comment">
-                </md-input-container>
-                <div layout="column" layout-align="center end" ng-show="user.comment.length > 0">
-                    <md-button class="md-raised md-primary" ng-click="postComment(comment)">Submit</md-button>
-                </div>
+                </md-input-container>                
+                <md-button class="md-raised md-primary" ng-show="user.comment.length > 0" ng-click="postComment(comment)">Submit</md-button>               
             </div>           
         </div> 
 	</div>    
-
     <md-fab-speed-dial md-direction="up" class="md-fab-bottom-right md-scale" ng-show="authenticated">
         <md-fab-trigger>
             <md-button aria-label="Add" class="md-fab md-primary material-icons">add</md-button>
