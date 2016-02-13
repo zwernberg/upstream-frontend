@@ -6,6 +6,12 @@ body,html {
   margin: 0;  
   padding: 0; 
 }
+footer { 
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+}
 p {
   margin: 0;
   padding: 0;
