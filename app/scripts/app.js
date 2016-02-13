@@ -106,10 +106,12 @@ angular
       });
     
     $mdThemingProvider.theme('default')
-    .primaryPalette('blue', {
-        'default': '800'
+    .primaryPalette('grey', {
+        'default': '200'
     })
-    .accentPalette('orange');
+    .accentPalette('blue', {
+        'default': '700'
+    });
   })
 	.run(function(djangoAuth){
     djangoAuth.initialize('//angler.online/api/rest-auth', false);

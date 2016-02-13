@@ -26,14 +26,10 @@
   <body>
     <header> 
         <md-toolbar ng-show="authenticated">  
-            <div class="md-toolbar-tools"  layout-align="center">      
-                <a ng-href="#/stream">// upstream</a>
-                <div flex></div>
-                <!--<md-button class="material-icons"><a ng-href="#/search">search</a></md-button> -->  
-                            
-                <a  ng-href="#/user/{{currentUser.id}}"><md-button class="material-icons" >person</md-button> </a>
-                <a ng-href="#/logout" ng-show="authenticated"><md-button class="material-icons" >settings_power</md-button></a>
-                <a ng-href="#/login" ng-hide="authenticated"><md-button class="material-icons" >settings_power</md-button></a>                  
+            <div class="md-toolbar-tools"  layout-align="center end">      
+                <a ng-href="#/stream" flex>// angler</a>                         
+                <a ng-href="#/user/{{currentUser.id}}"><md-button class="material-icons" >person</md-button> </a>
+                               
             </div>      
         </md-toolbar>  
     </header>     
