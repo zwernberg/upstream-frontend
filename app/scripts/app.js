@@ -99,7 +99,12 @@ angular
       .when('/stream', {
         templateUrl: 'views/stream.html',
         controller: 'StreamCtrl',
-        controllerAs: 'stream'
+        controllerAs: 'stream',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }		
       })
       .otherwise({
         redirectTo: '/'
