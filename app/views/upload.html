@@ -1,7 +1,7 @@
 <div class="container">
   
-  <h1 class="md-display-2 text-center" ng-hide="picFile">Let's see those fish.</h1> 
-  <h3 class="md-display-3 text-center" ng-show="picFile.result">Upload Successful!</h3>
+  <p class="md-display-2 text-center" ng-hide="picFile">Let's see those fish.</p> 
+  <p class="md-display-3 text-center" ng-show="picFile.result">Upload Successful!</p>
 
   <form name="myForm">
       
@@ -10,9 +10,9 @@
        
         
         <div layout="column">     
-            <md-button input class="md-raised md-primary" type="file" ngf-select ng-model="picFile" ng-hide="picFile" name="file"    
+            <md-button input class="md-raised md-accent" type="file" ngf-select ng-model="picFile" ng-hide="picFile" name="file"    
                 accept="image/*" ngf-max-size="2MB" required>Choose photo</md-button>
-            <h6 class="md-caption text-center" ng-hide="picFile">Maximum file size of 2MB</h6>
+            <p class="md-caption text-center" ng-hide="picFile">Maximum file size of 2MB</p>
         </div>
         
         
@@ -21,18 +21,18 @@
             {{picFile.size / 1000000|number:1}}MB: max 2M</i>
         <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
        
-        <h3 class="md-display-1" ng-show="picFile">Describe this photo</h3>
+        <p class="md-display-1" ng-show="picFile">Describe this photo</p>
         <md-input-container flex ng-show="picFile" md-no-float>
           <input ng-model="title">
         </md-input-container>
-        <h3 class="md-display-1" ng-show="picFile">Where was this photo taken</h3>
+        <p class="md-display-1" ng-show="picFile">Where was this photo taken</p>
         <md-input-container flex ng-show="picFile" md-no-float>
           <input ng-model="location">
         </md-input-container>    
         
         <div layout="row" flex>
             <md-button class="md-raised md-warn" ng-click="picFile = null" ng-show="picFile" flex>Remove</md-button>              
-            <md-button class="md-raised md-primary" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
+            <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
         </div>
         
         <span class="progress" ng-show="picFile.progress >= 0">
