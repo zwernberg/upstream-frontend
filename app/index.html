@@ -17,22 +17,19 @@
 
 			
     <!-- endbuild -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">        
   </head>
+  
   <body>
     <header> 
         <md-toolbar ng-show="authenticated">  
             <div class="md-toolbar-tools"  layout-align="center end">      
-                <a ng-href="#/stream" flex>// angler</a>                         
-                <a ng-href="#/user/{{currentUser.id}}"><md-button class="material-icons" >person</md-button> </a>
-                               
+                <a ng-href="#/stream">><> angler</a>
+                <div flex></div>                         
+                <a ng-href="#/user/{{currentUser.id}}" class="material-icons">person</a>                             
             </div>      
         </md-toolbar>  
-    </header>     
-         
-    
-    
+    </header>        
     <div ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -85,8 +82,6 @@
     <script src="scripts/controllers/logout.js"></script>
     <script src="scripts/controllers/userprofile.js"></script>
     <script src="scripts/controllers/stream.js"></script>
-    <!-- endbuild -->
-
-        
-</body>
+    <!-- endbuild -->        
+  </body>
 </html>
