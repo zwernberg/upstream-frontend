@@ -16,7 +16,7 @@
                 <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email" required />
 			</md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
-            <md-button type="submit" class="md-raised md-primary" ng-show="authenticated">Update Profile</md-button>
+            <md-button type="submit" class="md-raised md-accent" ng-show="authenticated">Update Profile</md-button>
         </form>
         <div class="alert alert-warning" ng-if="authenticated == false">You need to be logged in to do this.</div>
     </div>

@@ -1,25 +1,28 @@
 <div class="container">
-    <div class="user-card">
-        <div layout>
-            <img src="avatar.png" alt="avatar" flex="none"/>
-            <p class="md-title" flex>{{user.username}}</p>
-            <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">
-                <p class="md-caption" ng-show="user.following == true">You follow this user.</p>
-                <div class="material-icons" aria-label="Favorite"  ng-click="follow(user)" ng-style="{ 'color' : (user.following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
-            </div>
-            <div layout="column" layout-align="center end" ng-show="user.username == currentUser.username">
-                <md-button class="md-accent" ng-href="#/userprofile">Edit profile</md-button>
-                <md-button class="md-accent" ng-href="#/logout">Log out</md-button>
+    <div layout>
+        <div class="user-card" flex="50">
+            <div layout layout-align="start center">
+                <img src="avatar.png" alt="avatar"/>
+                <div flex></div>
+                <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">              
+                    <p class="md-caption" ng-show="user.following == true">You follow this user.</p>
+                    <div class="material-icons" aria-label="Favorite"  ng-click="follow(user)" ng-style="{ 'color' : (user.following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
+                </div>
+                <div layout="column" layout-align="center end" ng-show="user.username == currentUser.username">
+                    <p class="md-title">{{user.username}}</p>
+                    <p class="md-body-1" flex><a ng-href="#/userprofile">Edit profile</a></p>
+                    <p class="md-body-1" flex><a ng-href="#/logout">Log out</a></p>
+                </div>       
             </div>       
-        </div>       
-    </div>
-    <div layout class="user-card">       
-        <div layout="column" flex>
-            <p><span class="material-icons">location_on</span> Lake Mendota</p>
-            <p><span class="material-icons">directions_boat</span> Trout</p>
-            <p><span class="material-icons">adb</span> Fly</p>
         </div>
-        <p class="md-title">Favorites</p>
+        <div layout class="user-card" flex="50">
+            <p class="md-title" flex>Favorites</p>       
+            <div layout="column">
+                <p><span class="material-icons">location_on</span> Lake Mendota</p>
+                <p><span class="material-icons">directions_boat</span> Trout</p>
+                <p><span class="material-icons">adb</span> Fly</p>
+            </div>            
+        </div>
     </div>    
     <div class="user-grid" layout-wrap layout="row">
         <div  flex="33" layout layout-align="center center" ng-repeat="catch in user.catches | orderBy: '-created_at'">
