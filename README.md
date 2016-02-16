@@ -1,9 +1,21 @@
 [![Build Status](https://travis-ci.org/zwernberg/upstream-frontend.png)](https://travis-ci.org/zwernberg/upstream-frontend)
 
-# upstream
+## Upstream
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+This is the Front End Application for Upstream. A social fishing expedition.
+
+
+## Installation
+
+0. pull down this repo
+1. npm install
+2. bower install
+
+
+
+## License
+
+MIT License
 
 ## Build & development
 
