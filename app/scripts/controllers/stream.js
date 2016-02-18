@@ -8,10 +8,22 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('StreamCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
+  .controller('StreamCtrl', function ($scope, $rootScope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
     $scope.catches = catchService.query();
-    
-     
+	$scope.newComment = '';
+    $scope.postComment = function(currentCatch, comment){
+		$scope.newComment = {
+			'owner': {
+				'id': $rootScope.currentUser.id,
+				'username' : $rootScope.currentUser.username	
+			},
+			'text': comment
+		}
+	   catchService.comment({catchId:currentCatch.id},{'text':$scope.newComment.text}, function () {
+			currentCatch.comments.push($scope.newComment);
+			$scope.newComment = '';   
+	   });
+   }   
 	
 	$scope.likePhoto = function(thisCatch){
 		if (thisCatch.liked){

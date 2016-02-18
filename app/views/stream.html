@@ -23,9 +23,9 @@
             <div layout layout-align="space-between end">
                 <md-input-container flex="60">
                     <label>Comment</label>
-                    <input ng-model="user.comment">
+                    <input ng-model="newComment.text">
                 </md-input-container>                
-                <md-button class="md-raised md-primary" ng-show="user.comment.length > 0" ng-click="postComment(comment)">Submit</md-button>               
+                <md-button class="md-raised md-primary" ng-show="newComment.text.length > 0" ng-click="postComment(catch,newComment.text)">Submit</md-button>               
             </div>           
         </div> 
 	</div>    
