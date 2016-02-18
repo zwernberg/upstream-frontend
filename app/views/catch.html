@@ -1,4 +1,4 @@
-<div class="stream">  
+<div class="stream stream-detail">  
     <div class="stream-item">      
         <div class="stream-item-body">
             <div layout layout-align="center center" >
@@ -8,7 +8,7 @@
                 <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (vm.catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(vm.catch)">favorite</div>
             </div> 
         </div>            
-        <a ng-href="#/catch/{{vm.catch.id}}"><img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo"></a>
+        <a ng-href="#/catch/{{vm.catch.id}}"><img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo-detail"></a>
         <div class="stream-item-body">
             <div layout>
                 <div layout="column" flex>

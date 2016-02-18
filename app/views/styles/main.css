@@ -73,6 +73,13 @@ a:link, a:visited, a:hover, a:focus {
   width: 600px;
   margin: auto;
 }
+.stream-detail {
+  max-width: 800px;
+}
+.fish-photo-detail {
+  max-width: 800px;
+  margin:auto;
+}
 /*END STYLING FOR THE STREAM CARDS*/
 
 

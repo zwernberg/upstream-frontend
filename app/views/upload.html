@@ -4,16 +4,16 @@
   <form name="myForm"> 
       <div class="form-group">       
         <div layout="column">     
-            <md-button input class="md-raised md-accent" 
+            <md-button input 
+                       class="md-raised md-accent" 
                        type="file" 
                        ngf-select 
                        ng-model="picFile" 
                        ng-hide="picFile" 
                        name="file"    
-                       accept="image/*" 
-                       ngf-max-size="2MB" 
-                       ngf-resize-if="$width > 600"
-                       ngf-resize="{width: 600, quality: 1.0, centerCrop: true}"  
+                       accept="image/*"  
+                       ngf-resize-if="$width > 800"
+                       ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
                        required>Choose photo</md-button>
             <p class="md-caption text-center" ng-hide="picFile">Maximum file size of 2MB</p>
         </div>
