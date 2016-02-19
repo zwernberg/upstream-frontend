@@ -1,4 +1,6 @@
-body,html {  
+.debug { border: 1px red dashed; }
+body,
+html {  
   background: #f9f9f9; 
   max-width: 100%;
   overflow-x: hidden;
@@ -7,9 +9,7 @@ body,html {
   padding: 0; 
   color: #F5F5F5;
 }
-header {
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-}
+header { box-shadow: 0px 2px 8px rgba(0,0,0,0.1); }
 footer { 
   position: absolute;
   left: 0;
@@ -28,31 +28,28 @@ p {
   margin-right: auto;
   margin-left: auto;
 }
-a:link, a:visited, a:hover, a:focus {
+a:link, 
+a:visited, 
+a:hover, 
+a:focus {
   text-decoration: none;
   color: #64B5F6;
 }
+.material-icons { cursor: pointer; }
 
-.material-icons {
-  cursor: pointer;
-}
 /*BEGIN STYLING FOR THE STREAM CARDS*/
 .stream {
   margin: auto;
   margin-top: 10px;
   max-width: 600px;
 }
-.stream a {
-  color: #64B5F6; 
-}
+.stream a { color: #64B5F6; }
 .stream-item {
   box-shadow: 0px 2px 5px rgba(0,0,0,0.1);   
   margin-bottom: 35px;
   padding-bottom: 10px; 
 }
-.stream-item-body {
-  padding: 8px;
-}
+.stream-item-body { padding: 8px; }
 .stream-item-body md-input-container {
   margin: 0;
   padding: 0;
@@ -63,25 +60,17 @@ a:link, a:visited, a:hover, a:focus {
   border-radius: 50%; 
   margin-right: 8px; 
 }
-.comments {
-  margin-top: 20px;
-}
-.test {
-    border: 1px red dashed;
-}
+.comments { margin-top: 20px; }
 .fish-photo {
   width: 600px;
   margin: auto;
 }
-.stream-detail {
-  max-width: 800px;
-}
+.stream-detail { max-width: 800px; }
 .fish-photo-detail {
   max-width: 800px;
   margin:auto;
 }
 /*END STYLING FOR THE STREAM CARDS*/
-
 
 /*BEGIN STYLING FOR THE USER PROFILE*/
 .user-card {
@@ -103,13 +92,11 @@ a:link, a:visited, a:hover, a:focus {
   width: 95%;
 }
 /*END STYLING FOR THE USER PROFILE*/
-
 md-fab-speed-dial {
     position: fixed !important;
     bottom: 15px !important;
     right: 3vw !important;
 }
-
 /* bootstrap classes */
 img {
   border: 0;
@@ -120,9 +107,12 @@ img {
   max-width: 100%;
   height: auto;
 }
-.text-center {
-  text-align: center;
+.text-center { text-align: center; }
+
+.login-form, .register-form {
+    margin-top: 40px;
 }
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -137,8 +127,4 @@ img {
   .container {
     width: 1170px;
   }
-}
-
-.login-form, .register-form {
-    margin-top: 40px;
 }
