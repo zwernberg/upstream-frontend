@@ -61,6 +61,7 @@ a:focus {
   margin-right: 8px; 
 }
 .comments { margin-top: 20px; }
+.comments p { margin-bottom: 4px; }
 .fish-photo {
   width: 600px;
   margin: auto;
