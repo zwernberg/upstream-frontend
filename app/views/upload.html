@@ -22,14 +22,24 @@
             {{picFile.size / 1000000|number:1}}MB: max 2M</i>
         <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
        
-        <p class="md-display-1" ng-show="picFile">Describe this photo</p>
+        <p class="md-title" ng-show="picFile">Describe this photo</p>
         <md-input-container flex ng-show="picFile" md-no-float>
           <input ng-model="title">
         </md-input-container>
-        <p class="md-display-1" ng-show="picFile">Where was this photo taken</p>
+        <p class="md-title" ng-show="picFile">Where was this photo taken</p>
         <md-input-container flex ng-show="picFile" md-no-float>
           <input ng-model="location">
-        </md-input-container>    
+        </md-input-container>
+        <div layout ng-show="picFile">
+            <div flex="15" layout layout-align="center center">
+                <p class="md-title">Length  </p>
+            </div>
+            <md-slider flex min="0" max="100" ng-model="length" aria-label="length" id="length-slider" class>
+            </md-slider>
+            <div flex="20" layout layout-align="center center">
+                <input flex type="number" ng-model="length" aria-label="length" aria-controls="length-slider">
+            </div>
+        </div>  
         
         <div layout="row" flex>
             <md-button class="md-raised md-warn" ng-click="picFile = null" ng-show="picFile" flex>Remove</md-button>              
