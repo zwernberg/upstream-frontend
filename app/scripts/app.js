@@ -17,9 +17,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-	  'ngFileUpload',
+	'ngFileUpload',
     'ngMaterial',
-	  'LocalStorageModule'
+	'LocalStorageModule'
   ])
 	.config(['localStorageServiceProvider', function(localStorageServiceProvider){
   localStorageServiceProvider.setPrefix('ls');

@@ -1,50 +1,65 @@
-<div class="container"> 
-  <p class="md-display-2 text-center" ng-hide="picFile">Let's see those fish.</p> 
+<div class="container photo-upload-view"> 
   <p class="md-display-3 text-center" ng-show="picFile.result">Upload Successful!</p>
-  <form name="myForm"> 
-      <div class="form-group">       
-        <div layout="column">     
-            <md-button input 
-                       class="md-raised md-accent" 
-                       type="file" 
-                       ngf-select 
-                       ng-model="picFile" 
-                       ng-hide="picFile" 
-                       name="file"    
-                       accept="image/*"  
-                       ngf-resize-if="$width > 800"
-                       ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
-                       required>Choose photo</md-button>
-            <p class="md-caption text-center" ng-hide="picFile">Maximum file size of 2MB</p>
-        </div>
-              
-        <i ng-show="myForm.file.$error.maxSize">File too large 
-            {{picFile.size / 1000000|number:1}}MB: max 2M</i>
-        <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
+  <form name="myForm">     
+      <div class="form-group">
+            <!-- First screen of upload process -->
+            <div ng-hide="photoSelected">       
+                <div layout="column" ng-hide="picFile">
+                    <img class="photo-upload-area" src="photo-upload.svg" width="600px"/>     
+                    <md-button input 
+                            class="md-raised md-accent" 
+                            type="file" 
+                            ngf-select 
+                            ng-model="picFile" 
+                            name="file"    
+                            accept="image/*"  
+                            ngf-resize-if="$width > 800"
+                            ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
+                            required>
+                            ADD PHOTO
+                    </md-button>                        
+                </div>
+                <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
+                <div layout ng-show="picFile">
+                    <md-button class="md-raised" ng-click="picFile=null" flex><-- BACK</md-button>
+                    <div flex></div>
+                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT --></md-button>
+                </div>
+            </div>                   
+         
        
-        <p class="md-title" ng-show="picFile">Describe this photo</p>
-        <md-input-container flex ng-show="picFile" md-no-float>
-          <input ng-model="title">
-        </md-input-container>
-        <p class="md-title" ng-show="picFile">Where was this photo taken</p>
-        <md-input-container flex ng-show="picFile" md-no-float>
-          <input ng-model="location">
-        </md-input-container>
-        <div layout ng-show="picFile">
-            <div flex="15" layout layout-align="center center">
-                <p class="md-title">Length  </p>
-            </div>
-            <md-slider flex min="0" max="100" ng-model="length" aria-label="length" id="length-slider" class>
-            </md-slider>
-            <div flex="20" layout layout-align="center center">
-                <input flex type="number" ng-model="length" aria-label="length" aria-controls="length-slider">
-            </div>
-        </div>  
-        
-        <div layout="row" flex>
-            <md-button class="md-raised md-warn" ng-click="picFile = null" ng-show="picFile" flex>Remove</md-button>              
-            <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
-        </div>
+            <!-- Second screen of upload process -->
+            <div ng-show="photoSelected">
+                <p class="md-display-2 text-center">Photo details</p>
+                <div class="photo-details-body">
+                    <md-input-container flex>
+                        <label>Describe this photo</label>
+                        <input ng-model="title">
+                    </md-input-container>
+                    
+                    <md-input-container flex>
+                        <label>Where was this photo taken?</label>
+                        <input ng-model="location">
+                    </md-input-container>                                        
+                    <div layout layout-align="start center">
+                        <p>Length</p>
+                        <div ng-hide="length > 0" flex></div>
+                        <p flex ng-show="length > 0" flex>: {{ length }} inches</p>                        
+                        <md-slider flex="60" min="0" max="100" ng-model="length" aria-label="length" id="length-slider"></md-slider>
+                    </div>
+                    <div layout layout-align="start center">
+                        <p>Weight</p>
+                        <div ng-hide="weight > 0" flex></div>
+                        <p flex ng-show="weight > 0" flex>: {{ weight }} lbs</p>                        
+                        <md-slider flex="60" min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>
+                    </div>                    
+                    <div layout>
+                        <md-button class="md-raised" ng-click="photoSelected=false" flex><-- BACK</md-button>
+                        <div flex></div>  
+                        <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
+                    </div>
+                 </div>
+               </div>
         
         <span class="progress" ng-show="picFile.progress >= 0">
           <div style="width:{{picFile.progress}}%" 
