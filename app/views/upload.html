@@ -21,9 +21,9 @@
                 </div>
                 <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
                 <div layout ng-show="picFile">
-                    <md-button class="md-raised" ng-click="picFile=null" flex><-- BACK</md-button>
+                    <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
                     <div flex></div>
-                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT --></md-button>
+                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
                 </div>
             </div>                   
          
@@ -54,7 +54,7 @@
                         <md-slider flex="60" min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>
                     </div>                    
                     <div layout>
-                        <md-button class="md-raised" ng-click="photoSelected=false" flex><-- BACK</md-button>
+                        <md-button class="md-raised" ng-click="photoSelected=false" flex> BACK</md-button>
                         <div flex></div>  
                         <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
                     </div>

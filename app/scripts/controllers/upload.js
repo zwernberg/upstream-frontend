@@ -25,7 +25,7 @@ angular
             file.upload.then(function (response) {        
                 $timeout(function () {
                     file.result = response.data;
-                    console.log(response.data);
+					$location.path("/");
                 });
                 }, function (response) {
                     if (response.status > 0)
