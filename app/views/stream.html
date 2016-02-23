@@ -2,7 +2,7 @@
 	<div class="stream-item" ng-repeat="catch in catches | orderBy: '-created_at'">	
         <div class="stream-item-body">
             <div layout layout-align="center center" >
-                <img src="avatar.png" alt="avatar"/> 
+                <img src="images/avatar.png" alt="avatar"/> 
                 <p class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></p>
                 <p class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }">{{catch.likes}}</p> 
                 <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
