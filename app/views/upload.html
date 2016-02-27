@@ -50,7 +50,9 @@
                         <p flex>Weight</p>
                         <p>{{ weight }} lbs</p>                        
                     </div>                                          
-                    <md-slider flex min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>                                                                               
+                    <md-slider flex min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>  
+                    <p>Tags</h2p>
+                    <md-chips ng-model="tags"></md-chips>                                                                                                 
                     <div layout>
                         <md-button class="md-raised" ng-click="photoSelected=false" flex>BACK</md-button>
                         <div flex></div>  
