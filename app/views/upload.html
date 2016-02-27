@@ -2,8 +2,14 @@
   <p class="md-display-3 text-center" ng-show="picFile.result">Upload Successful!</p>
   <form name="myForm">     
       <div class="form-group">
-            <!-- First screen of upload process -->
-            <div ng-hide="photoSelected">       
+            <!-- Upload photo screen of upload process -->
+            <div ng-hide="photoSelected || photoDetailsCompleted">
+                <!-- Navigation buttons --> 
+                <div layout ng-show="picFile">
+                    <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
+                    <div flex></div>
+                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
+                </div>                      
                 <div layout="column" ng-hide="picFile">
                     <img class="photo-upload-area" src="images/photo-upload.svg" width="600px"/>     
                     <md-button input 
@@ -20,46 +26,60 @@
                     </md-button>                        
                 </div>
                 <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
-                <div layout ng-show="picFile">
-                    <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
-                    <div flex></div>
-                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
-                </div>
             </div>                   
          
        
-            <!-- Second screen of upload process -->
+            <!-- Photo detail screen of upload process -->
             <div ng-show="photoSelected">
                 <p class="md-display-2 text-center">Photo details</p>
                 <div class="photo-details-body">
+                    <!-- Navigation buttons -->
+                    <div layout>
+                        <md-button class="md-raised" ng-click="photoSelected=false" flex>BACK</md-button>
+                        <div flex></div>
+                        <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="completePhotoDetails()" ng-show="picFile" flex>NEXT</md-button>
+                    </div>
+                    <!-- Photo details input -->                    
                     <md-input-container flex>
                         <label>Describe this photo</label>
                         <input ng-model="title">
                     </md-input-container>
-                    
+
                     <md-input-container flex>
                         <label>Where was this photo taken?</label>
                         <input ng-model="location">
-                    </md-input-container>                                        
-                    <div layout layout-align="start center">
-                        <p flex>Length</p>
-                        <p>{{ length }} inches</p>                        
-                    </div>                                          
-                    <md-slider flex min="0" max="100" ng-model="length" aria-label="length" id="length-slider"></md-slider>                       
-                    <div layout layout-align="start center">
-                        <p flex>Weight - disabled</p>
-                        <p>{{ weight }} lbs</p>                        
-                    </div>                                          
-                    <md-slider flex min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>  
-                    <p>Tags</h2p>
-                    <md-chips ng-model="tags"></md-chips>                                                                                                 
+                    </md-input-container>
+                </div>
+            </div>
+            
+            <!-- Fish detail screen of upload process -->
+            <div ng-show="photoDetailsCompleted">
+                <p class="md-display-2 text-center">Fish details</p>
+                <div class="fish-details-body">
+                    <!-- Navigation buttons -->
                     <div layout>
-                        <md-button class="md-raised" ng-click="photoSelected=false" flex>BACK</md-button>
-                        <div flex></div>  
+                        <md-button class="md-raised" ng-click="unCompletePhotoDetails()" flex>BACK</md-button>
+                        <div flex></div>
                         <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)" ng-show="picFile" flex>Submit</md-button>
                     </div>
-                 </div>
-               </div>
+                    <!-- Fish details input -->                    
+                    <div layout layout-align="start center">
+                        <p flex>Length</p>
+                        <p>{{ length }} inches</p>
+                    </div>
+                    <md-slider flex min="0" max="100" ng-model="length" aria-label="length" id="length-slider"></md-slider>
+                    
+                    <div layout layout-align="start center">
+                        <p flex>Weight - disabled</p>
+                        <p>{{ weight }} lbs</p>
+                    </div>
+                    <md-slider flex min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>
+                    
+                    <p>Tags</p>
+                    <md-chips ng-model="tags"></md-chips>
+                </div>
+            </div>            
+            
         
         <span class="progress" ng-show="picFile.progress >= 0">
           <div style="width:{{picFile.progress}}%" 

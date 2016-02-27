@@ -10,11 +10,20 @@
 angular
     .module('upstreamApp')
     .controller('UploadCtrl', function ($scope, catchService, $resource,  Upload, $routeParams, $timeout, $location) {
-        $scope.photoSelected = false;
+        $scope.photoSelected         = false;
+        $scope.photoDetailsCompleted = false;
         
         $scope.selectPhoto = function() {
             $scope.photoSelected = true;
         }
+        $scope.completePhotoDetails = function() {
+            $scope.photoSelected = false;
+            $scope.photoDetailsCompleted = true;
+        }
+        $scope.unCompletePhotoDetails = function() {
+            $scope.photoSelected = true;
+            $scope.photoDetailsCompleted = false;
+        }                 
         
         $scope.uploadPic = function(file) {
             file.upload = Upload.upload({

@@ -106,7 +106,7 @@ md-fab-speed-dial {
 .photo-upload-area {
     fill: #94d31b
 }
-.photo-details-body {
+.photo-details-body, fish-details-body {
     margin-top: 20px;
 }
 /* bootstrap classes */
