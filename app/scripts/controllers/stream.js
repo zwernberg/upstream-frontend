@@ -36,6 +36,10 @@ angular.module('upstreamApp')
 			thisCatch.liked = true;
 		}
     }
+    
+    $scope.loadMoreCatches = function() {
+        console.log('loading additional catches');
+    }
 	
    
   });
