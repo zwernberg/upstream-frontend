@@ -11,6 +11,7 @@ angular.module('upstreamApp')
   .controller('CatchCtrl', function ($scope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $rootScope, $timeout) {
 	var vm = this;
     vm.catch = catchService.get({catchId: $routeParams.catchId});
+      
     
     vm.postComment = function(comment){
 		vm.newComment = {
