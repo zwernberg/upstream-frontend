@@ -14,8 +14,11 @@
                 <div layout="column" flex>
                     <p class="md-body-1"><a ng-href="#/user/{{catch.owner.id}}">{{catch.location}}</a></p>
                     <p class="md-subhead">{{catch.title}}</p>
-                 </div>                                                                                                      
-                <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
+                 </div>
+                <div layout="column">
+                    <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
+                    <p class="md-subhead" ng-show="catch.length>0">{{catch.length}} inches </p>
+                </div>                                                                                                                                      
             </div>
             <div class="comments">
                 <p ng-repeat="comment in catch.comments"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
