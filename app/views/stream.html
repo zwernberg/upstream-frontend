@@ -21,7 +21,9 @@
                 </div>                                                                                                                                      
             </div>
             <div class="comments">
-                <p ng-repeat="comment in catch.comments"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
+                <p ng-repeat="comment in catch.comments | limitTo:commentLimit"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
+                <md-button class="md-accent" ng-show="catch.comments.length > commentLimit && commentLimit != null" ng-click="loadAllComments()">See all...</md-button>
+                <md-button class="md-accent" ng-show="commentLimit == null" ng-click="collapseComments()">Collapse...</md-button>
             </div>                              
             <div layout layout-align="space-between end">
                 <md-input-container flex="60">
