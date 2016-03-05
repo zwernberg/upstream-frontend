@@ -81,6 +81,9 @@ a:focus {
   margin-bottom: 5px;
   padding: 8px;
 }
+.user-card img {
+  margin-right: 10px;
+}
 .user-grid {
   margin-top: 15px;
   padding-left: 15px;
@@ -91,6 +94,9 @@ a:focus {
   height: 180px;
   margin-bottom: 15px;
   object-fit: cover;
+}
+.user-favorite-section {
+  margin-top: 20px;
 }
 /*END STYLING FOR THE USER PROFILE*/
 md-fab-speed-dial {
