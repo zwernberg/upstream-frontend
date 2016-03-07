@@ -8,7 +8,7 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('UserCtrl', function ($scope, userService, currentUserService, $resource, $routeParams, $mdToast) {
+  .controller('UserCtrl', function ($scope, userService, currentUserService, $resource, $routeParams, $mdToast, $location, djangoAuth) {
 	var user = userService.get({id: $routeParams.userId}, function() {
    		$scope.user = user;
 	});
@@ -25,6 +25,22 @@ angular.module('upstreamApp')
             user.following = false;
 			$mdToast.show($mdToast.simple().content('You no longer follow ' + user.username).position('right bottom'));
         }
+    }
+    
+    $scope.confirmLogout = function(){
+        var toast = $mdToast.simple()
+            .content('Are you sure you want to log out?')
+            .action('OK')
+            .highlightAction(false)
+            .position('center top');
+        $mdToast.show(toast).then(function(response) {
+        if ( response == 'ok' ) {
+            djangoAuth.logout()
+                .then(function () {
+                    $location.path("/login");
+                })
+        }
+        });        
     }
 		   
     
