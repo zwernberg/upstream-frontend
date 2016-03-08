@@ -45,5 +45,5 @@ angular
             });     	
         }
         
-        $scope.tags = ['flopfriday', 'lunkers', 'great outdoors'];	
+        $scope.tags = [];	
   });
