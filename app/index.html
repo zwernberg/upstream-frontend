@@ -18,17 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">        
   </head>
   
-  <body>
-    <header> 
-        <md-toolbar ng-show="authenticated">  
-            <div class="md-toolbar-tools"  layout-align="center end" >      
-                <a ng-href="#/stream"> angler</a>
-                <div flex></div>
-                <a ng-href="#/search" class="material-icons" layout-margin>search</a>                                   
-                <a ng-href="#/user/{{currentUser.id}}" class="material-icons" layout-margin>person</a>                             
-            </div>      
-        </md-toolbar>  
-    </header>        
+  <body> 
     <div ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

@@ -1,31 +1,38 @@
-<div class="container login-form">
-  <form role="form" ng-submit="login(loginForm)" name="loginForm" novalidate>
-    <p class="md-display-3 text-center">Angler.</p>
-    <p class="md-display-1 text-center">It's fish all the way down.</p>     
-    <div layout="column">  
-        <md-input-container flex>
-              <label>Username</label>
-              <input autocapitalize="off" ng-model="username" required>
-        </md-input-container>       
-        <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
+<div class="splash-page">
+    <header>
+        <div class="md-toolbar-tools" layout-align="center end">
+            <p class="md-display-1" flex>Angler</p>
+            <a ng-href="#/registration">Create an account</a>
+        </div>
+    </header>
+    <div class="container login-form">
+    <form role="form" ng-submit="login(loginForm)" name="loginForm" novalidate>
         
-        <md-input-container flex>
-              <label>Password</label>
-              <input type="password" autocapitalize="off" ng-model="password" required>
-        </md-input-container>
-        <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
-        <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
-        <div class="alert alert-danger" ng-if="error">{{error}}</div>
-              
-        <md-button type="submit" class="md-raised md-accent">Login</md-button>      
-    </div>   
-  </form>  
-  <p class="md-body-3 text-center">New to Angler? <a ng-href="#/registration">Create an account.</a></p>
-  <p class="md-body-4 text-center">Forgot your username or password? Click <a ng-href="#">here.</a></p>  
-</div>
-<footer>
-    <div class="container text-center">
-        <p class="md-caption">lovingly made by <a href="http://www.bzlab.org">bzlab</a> - brother to brother brogramming</p>
-        <p class="md-caption">&copy; 2016</p>
+        <div layout="column">  
+            <md-input-container flex>
+                <label>Username</label>
+                <input autocapitalize="off" ng-model="username" required>
+            </md-input-container>       
+            <div class="alert alert-danger" ng-repeat="error in errors.username">{{error}}</div>
+            
+            <md-input-container flex>
+                <label>Password</label>
+                <input type="password" autocapitalize="off" ng-model="password" required>
+            </md-input-container>
+            <div class="alert alert-danger" ng-repeat="error in errors.password">{{error}}</div>
+            <div class="alert alert-danger" ng-repeat="error in errors.non_field_errors">{{error}}</div>
+            <div class="alert alert-danger" ng-if="error">{{error}}</div>
+                
+            <md-button type="submit" class="md-raised md-primary">Login</md-button>      
+        </div>   
+    </form>  
+
+    <p class="md-body-4 text-center">Forgot your username or password? Click <a ng-href="#">here.</a></p>  
     </div>
-</footer>
+    <footer>
+        <div class="container text-center">
+            <p class="md-caption">lovingly made by <a href="http://www.bzlab.org">bzlab</a> - brother to brother brogramming</p>
+            <p class="md-caption">&copy; 2016</p>
+        </div>
+    </footer>
+</div>
