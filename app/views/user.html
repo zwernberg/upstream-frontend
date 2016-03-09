@@ -14,12 +14,12 @@
             <img src="images/avatar.png" alt="avatar" />
             <div layout="column">
                 <p class="md-title">{{user.username}}</p>
-                <p class="md-caption"><a ng-href="#/userprofile">Following 3 people</a></p>
-                <p class="md-caption"><a ng-href="#/userprofile">69k followers</a></p>
+                <p class="md-caption"><a ng-href="#/userprofile">Following {{user.following}} people</a></p>
+                <p class="md-caption"><a ng-href="#/userprofile">{{user.followers}} followers</a></p>
             </div>
             <div flex></div>
             <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">
-                <p class="md-caption" ng-show="user.following == true">You follow this user.</p>
+                <p class="md-caption" ng-show="user.is_following == true">You follow this user.</p>
                 <div class="material-icons" aria-label="Favorite" ng-click="follow(user)" ng-style="{ 'color' : (user.following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
             </div>
             <div layout="column" layout-align="start end" ng-show="user.username == currentUser.username">
