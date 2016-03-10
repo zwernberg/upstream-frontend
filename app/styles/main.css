@@ -48,9 +48,7 @@ a:focus {
   background-attachment: fixed;
   background-size: cover;
 }
-.splash-page a, p {
-  color: white;
-}
+.splash-page a, .splash-page p { color: white; }
 
 
 /*BEGIN STYLING FOR THE STREAM CARDS*/
