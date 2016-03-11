@@ -12,14 +12,17 @@ angular.module('upstreamApp')
 	var user = userService.get({id: $routeParams.userId}, function() {
    		$scope.user = user;
 	});
+
+    
+
+    
     
 	$scope.follow = function(currentUser){
         if (user.is_following == false) {
             userService.follow({id: currentUser.id});
             user.is_following = true;
             user.followers++;
-			$mdToast.show($mdToast.simple().content('You now follow ' + user.username).position('right bottom'));
-
+			$mdToast.show($mdToast.simple().content('You now follow ' + user.username).position('right bottom'));          
         }
         else {
             userService.unfollow({id: currentUser.id});
