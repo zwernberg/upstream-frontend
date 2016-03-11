@@ -20,7 +20,7 @@
             <div flex></div>
             <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">
                 <p class="md-caption" ng-show="user.is_following == true">You follow this user.</p>
-                <div class="material-icons" aria-label="Favorite" ng-click="follow(user)" ng-style="{ 'color' : (user.following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
+                <div class="material-icons" aria-label="Favorite" ng-click="follow(user)" ng-style="{ 'color' : (user.is_following) ? '#ff6666' : '#c2c2d6' }">person_add</div>
             </div>
             <div layout="column" layout-align="start end" ng-show="user.username == currentUser.username">
                 <p class="md-body-1" flex><a ng-href="#/userprofile">Edit profile</a></p>
