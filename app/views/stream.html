@@ -27,11 +27,11 @@
                  </div>
                 <div layout="column">
                     <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
-                    <p class="md-subhead" ng-show="catch.length>0">{{catch.length}} inches </p>
+                    <p class="md-caption" ng-show="catch.length>0">{{catch.length}} inches </p>
                 </div>                                                                                                                                      
             </div>
             <div class="comments">
-                <p ng-repeat="comment in catch.comments | limitTo:commentLimit"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
+                <p  ng-repeat="comment in catch.comments | limitTo:commentLimit"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
                 <md-button class="md-accent" ng-show="catch.comments.length > commentLimit && commentLimit != null" ng-click="loadAllComments()">See all...</md-button>
                 <md-button class="md-accent" ng-show="commentLimit == null" ng-click="collapseComments()">Collapse...</md-button>
             </div>                              
