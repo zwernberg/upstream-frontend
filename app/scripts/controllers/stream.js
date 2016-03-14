@@ -46,7 +46,7 @@ angular.module('upstreamApp')
         thisCatch.commentLimit = null;
     }
     $scope.collapseComments = function(thisCatch) {
-        thisCatch.commentLimit = 3;
+        	thisCatch.commentLimit = 3;
     }    
 	
    
