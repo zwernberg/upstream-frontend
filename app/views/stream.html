@@ -32,8 +32,8 @@
             </div>
             <div class="comments" ng-init ="catch.commentLimit=3">
                 <p  ng-repeat="comment in catch.comments | limitTo:catch.commentLimit"><a ng-href="#/user/{{comment.owner.id}}">{{comment.owner.username}}</a> {{ comment.text }}</p>
-                <md-button class="md-accent" ng-show="catch.comments.length > catch.commentLimit && catch.commentLimit != null" ng-click="loadAllComments(catch)">See all...</md-button>
-                <md-button class="md-accent" ng-show="catch.commentLimit == null" ng-click="collapseComments(catch)">Collapse...</md-button>
+                <md-button class="md-accent" ng-show="catch.comments.length > catch.commentLimit && catch.commentLimit != null" ng-click="toggleComments(catch)">See all...</md-button>
+                <md-button class="md-accent" ng-show="catch.commentLimit == null" ng-click="toggleComments(catch)">Collapse...</md-button>
             </div>                              
             <div layout layout-align="space-between end">
                 <md-input-container flex="60">

@@ -8,9 +8,11 @@
  * Controller of the upstreamApp
  */
 angular.module('upstreamApp')
-  .controller('StreamCtrl', function ($scope, $rootScope, catchService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
+  .controller('StreamCtrl', function ($scope, $rootScope, catchService, postService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
     $scope.catches = catchService.query();
-    //$scope.commentLimit = 3;
+	$scope.toggleComments = function(currentCatch){
+		postService.toggleComment(currentCatch);
+	}
     
     $scope.postComment = function(currentCatch, comment){
 		var commentModel = {
@@ -42,12 +44,7 @@ angular.module('upstreamApp')
     $scope.loadMoreCatches = function() {
         console.log('loading additional catches');
     }
-    $scope.loadAllComments = function(thisCatch) {
-        thisCatch.commentLimit = null;
-    }
-    $scope.collapseComments = function(thisCatch) {
-        	thisCatch.commentLimit = 3;
-    }    
+
 	
    
   });
