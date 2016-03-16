@@ -7,7 +7,6 @@ html {
   -webkit-overflow-scrolling: touch;  
   margin: 0;  
   padding: 0; 
-  color: #F5F5F5;
 }
 header { 
   box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
@@ -15,7 +14,27 @@ header {
   font-family: 'Oleo Script', cursive;
 }
 .splash-page header a { 
+  font-size: 1.4rem;
+}
+.splash-page header{ 
   font-size: 1.6rem;
+  color: #F5F5F5;
+}
+.splash-page button {
+  background-color: transparent;
+  border: 2px solid #F5F5F5;
+  color: #F5F5F5;
+  font-size: 1.4rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;  
+  margin-bottom: 20px;
+  padding: 5px;
+  -webkit-transition-duration: 0.8s; /* Safari */
+  transition-duration: 0.8s;  
+}
+.splash-page button:hover {
+  background-color: #F5F5F5;
+  color: black;
 }
 footer { 
   position: absolute;
