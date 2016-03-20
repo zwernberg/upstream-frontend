@@ -14,8 +14,8 @@
             <div layout layout-align="center center" >
                 <img src="images/avatar.png" alt="avatar"/> 
                 <p class="md-body-1" flex><a ng-href="#/user/{{catch.owner.id}}">{{catch.owner.username}}</a></p>
-                <p class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }">{{catch.likes}}</p> 
-                <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#ff6666' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
+                <p class="md-subhead" ng-style="{ 'color' : (catch.liked) ? '#bd320f' : '#c2c2d6' }">{{catch.likes}}</p> 
+                <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (catch.liked) ? '#bd320f' : '#c2c2d6' }" ng-click="likePhoto(catch)">favorite</div>
             </div> 
         </div>       
         <a ng-href="#/catch/{{catch.id}}"><img ng-src="{{catch.fishPhoto}}" class="img-responsive fish-photo"></a>       

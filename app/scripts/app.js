@@ -107,10 +107,10 @@ angular
     
     $mdThemingProvider.theme('default')
     .primaryPalette('grey', {
-        'default': '200'
+        'default': '900'
     })
-    .accentPalette('blue', {
-        'default': '700'
+    .accentPalette('light-green', {
+        'default': '800'
     });
   })
 	.run(function(djangoAuth){
