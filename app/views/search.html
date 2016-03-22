@@ -4,4 +4,12 @@
         <label>Search...</label>
         <input ng-model="search">
     </md-input-container>
+    <div class="search-result" ng-repeat="result in results | filter:search">
+        <a ng-href="#/user/{{ result.userId }}">
+            <div layout layout-align="center center">           
+                <img ng-src="{{ result.avatar }}" alt="avatar"/>
+                <p class="md-body-1" flex>{{result.name}}</p>           
+            </div>
+        </a>
+    </div>   
 </div>

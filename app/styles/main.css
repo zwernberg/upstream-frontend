@@ -164,7 +164,7 @@ a:focus {
 .user-favorite-section {
   margin-top: 20px;
 }
-/*END STYLING FOR THE USER PROFILE*/
+/* END STYLING FOR THE USER PROFILE*/
 md-fab-speed-dial {
     position: fixed !important;
     bottom: 15px !important;
@@ -179,6 +179,21 @@ md-fab-speed-dial {
 }
 .photo-details-body, fish-details-body {
     margin-top: 20px;
+}
+/* SEARCH PAGE STYLING */
+.search-result {
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+.search-result img {
+  height: 30px;
+  width: 30px; 
+  border-radius: 50%; 
+  margin-right: 8px; 
+}
+.search-result p {
+  color: #558B2F;
+  font-weight: 500;  
 }
 /* bootstrap classes */
 img {
