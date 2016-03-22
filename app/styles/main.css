@@ -19,10 +19,13 @@ header {
   margin-bottom: 20px; 
   font-family: 'Oleo Script', cursive;
 }
+header h1 {
+  font-size: 1.8rem !important;
+}
 .splash-page header a { 
   font-size: 1.4rem;
 }
-.splash-page header{ 
+.splash-page header { 
   font-size: 1.6rem;
   color: #F5F5F5;
 }
