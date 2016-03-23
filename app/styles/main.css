@@ -182,8 +182,9 @@ md-fab-speed-dial {
 }
 /* SEARCH PAGE STYLING */
 .search-result {
-  margin-bottom: 10px;
-  margin-left: 30px;
+  padding: 5px;
+  border: solid 1px #e2e9e2;
+  border-radius: 3%;
 }
 .search-result img {
   height: 30px;
