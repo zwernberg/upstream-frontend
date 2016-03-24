@@ -5,25 +5,34 @@
             <!-- Upload photo screen of upload process -->
             <div ng-hide="photoSelected || photoDetailsCompleted">
                 <!-- Navigation buttons --> 
-                <div layout ng-show="picFile">
-                    <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
-                    <div flex></div>
-                    <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
+                <div ng-show="picFile">
+                    <p class="md-display-2 text-center">Photo preview</p>
+                    <div class="photo-preview" layout>
+                        <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
+                        <div flex></div>
+                        <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
+                    </div>
                 </div>                      
                 <div layout="column" ng-hide="picFile">
-                    <img class="photo-upload-area" src="images/photo-upload.svg" width="600px"/>     
-                    <md-button input 
-                            class="md-raised md-accent" 
-                            type="file" 
-                            ngf-select 
-                            ng-model="picFile" 
-                            name="file"    
-                            accept="image/*"  
-                            ngf-resize-if="$width > 800"
-                            ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
-                            required>
-                            ADD PHOTO
-                    </md-button>                        
+                    <p class="md-display-2 text-center">Share a photo</p>
+                    <div class="photo-selection" layout>
+                        <md-button ng-href="#/stream" class="md-raised" flex>BACK</md-button>
+                        <div flex></div>
+                        <md-button input 
+                                class="md-raised md-accent" 
+                                type="file" 
+                                ngf-select 
+                                ng-model="picFile" 
+                                name="file"    
+                                accept="image/*"  
+                                ngf-resize-if="$width > 800"
+                                ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
+                                required
+                                flex>
+                                BROWSE
+                        </md-button>                        
+                    </div>                    
+                    <img class="photo-upload-area" src="images/photo-upload.svg" width="600px"/>                            
                 </div>
                 <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-responsive">
             </div>                   
@@ -76,7 +85,7 @@
                     <md-slider flex min="0" max="100" ng-model="weight" aria-label="weight" id="weight-slider"></md-slider>
                     
                     <p>Tags</p>
-                    <md-chips ng-model="tags"></md-chips>
+                    <md-chips class="md-primary" ng-model="tags"></md-chips>
                 </div>
             </div>            
             

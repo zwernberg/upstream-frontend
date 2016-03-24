@@ -22,33 +22,12 @@ header {
 header h1 {
   font-size: 1.8rem !important;
 }
-.splash-page header a { 
-  font-size: 1.4rem;
+md-fab-speed-dial {
+    position: fixed !important;
+    bottom: 15px !important;
+    right: 3vw !important;
 }
-.splash-page header { 
-  font-size: 1.6rem;
-  color: #F5F5F5;
-}
-.splash-page input, select, textarea { 
-  font-size: 1.6rem;
-  color: #F5F5F5;
-}
-.splash-page button {
-  background-color: transparent;
-  border: 2px solid #F5F5F5;
-  color: #F5F5F5;
-  font-size: 1.4rem;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;  
-  margin-bottom: 20px;
-  padding: 5px;
-  -webkit-transition-duration: 0.8s; /* Safari */
-  transition-duration: 0.8s;  
-}
-.splash-page button:hover {
-  background-color: #F5F5F5;
-  color: black;
-}
+
 footer { 
   position: absolute;
   left: 0;
@@ -77,6 +56,7 @@ a:focus {
 }
 .material-icons { cursor: pointer; }
 
+/* SPLASH PAGE STYLING */
 .splash-page {
   height: 100vh;
   background-image: url(../images/splash.jpg);
@@ -84,6 +64,33 @@ a:focus {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+.splash-page header a { 
+  font-size: 1.4rem;
+}
+.splash-page header { 
+  font-size: 1.6rem;
+  color: #F5F5F5;
+}
+.splash-page input, select, textarea { 
+  font-size: 1.6rem;
+  color: #F5F5F5;
+}
+.splash-page button {
+  background-color: transparent;
+  border: 2px solid #F5F5F5;
+  color: #F5F5F5;
+  font-size: 1.4rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;  
+  margin-bottom: 20px;
+  padding: 5px;
+  -webkit-transition-duration: 0.8s; /* Safari */
+  transition-duration: 0.8s;  
+}
+.splash-page button:hover {
+  background-color: #F5F5F5;
+  color: black;
 }
 .splash-page a, .splash-page p, splash-page h1 { 
   color: white;
@@ -96,7 +103,7 @@ a:focus {
   text-shadow: 0 0 1px gray;
 }
 
-/*BEGIN STYLING FOR THE STREAM CARDS*/
+/* STREAM CARDS STYLING */
 .stream {
   margin: auto;
   margin-top: 10px;
@@ -134,9 +141,9 @@ a:focus {
   max-width: 800px;
   margin:auto;
 }
-/*END STYLING FOR THE STREAM CARDS*/
 
-/*BEGIN STYLING FOR THE USER PROFILE*/
+
+/* USER PROFILE STYLING */
 .user-card {
   box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
   color: white;  
@@ -164,22 +171,15 @@ a:focus {
 .user-favorite-section {
   margin-top: 20px;
 }
-/* END STYLING FOR THE USER PROFILE*/
-md-fab-speed-dial {
-    position: fixed !important;
-    bottom: 15px !important;
-    right: 3vw !important;
-}
+
+/*  UPLOAD PROCESS STYLING*/
 .photo-upload-view {
-    margin-top: 30px;
+  margin-top: 40px;
 }
-.photo-upload-view p { color: #808080; }
-.photo-upload-area {
-    fill: #94d31b
+.photo-selection, .photo-preview, .photo-details-body, .fish-details-body {
+  margin-top: 40px;
 }
-.photo-details-body, fish-details-body {
-    margin-top: 20px;
-}
+
 /* SEARCH PAGE STYLING */
 .search-result {
   padding: 5px;
@@ -196,7 +196,13 @@ md-fab-speed-dial {
   color: #558B2F;
   font-weight: 500;  
 }
-/* bootstrap classes */
+
+/* LOGIN & REGISTRATION STYLING */
+.login-form, .register-form {
+    margin-top: 40px;
+}
+
+/* UTILITY CLASSES */
 img {
   border: 0;
   max-width: 100% !important;
@@ -208,9 +214,7 @@ img {
 }
 .text-center { text-align: center; }
 
-.login-form, .register-form {
-    margin-top: 40px;
-}
+/* MEDIA QUERIES */
 
 @media (min-width: 768px) {
   .container {
