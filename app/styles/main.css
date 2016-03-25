@@ -183,7 +183,8 @@ a:focus {
 /* SEARCH PAGE STYLING */
 .search-result {
   padding: 5px;
-  border: solid 1px #e2e9e2;
+  border-top: solid 1px #e2e9e2;
+  border-bottom: solid 1px #e2e9e2;
   border-radius: 3%;
 }
 .search-result img {
