@@ -202,6 +202,7 @@ a:focus {
 .login-form, .register-form {
     margin-top: 40px;
 }
+.register-form a { color:black; }
 
 /* UTILITY CLASSES */
 img {
