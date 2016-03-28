@@ -27,7 +27,7 @@
                  </div>
                 <div layout="column">
                     <p class="md-body-1"><a ng-href="#/catch/{{catch.id}}" am-time-ago="catch.created_at"></a></p>
-                    <p class="md-caption" ng-show="catch.length>0">{{catch.length}} inches </p>
+                    <p class="md-body-1" ng-show="catch.length>0">{{catch.length}} inches </p>
                 </div>                                                                                                                                      
             </div>
             <div class="comments" ng-init ="catch.commentLimit=3">
