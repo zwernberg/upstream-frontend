@@ -8,7 +8,7 @@
         </div>
     </md-toolbar>
 </header>
-<div class="stream stream-detail">  
+<div class="stream">  
     <div class="stream-item">      
         <div class="stream-item-body">
             <div layout layout-align="center center" >
@@ -18,7 +18,7 @@
                 <div class="material-icons" aria-label="Favorite" ng-style="{'color' : (vm.catch.liked) ? '#bd320f' : '#c2c2d6' }" ng-click="likePhoto(vm.catch)">favorite</div>
             </div> 
         </div>            
-        <a ng-href="#/catch/{{vm.catch.id}}"><img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo-detail"></a>
+        <a ng-href="#/catch/{{vm.catch.id}}"><img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo"></a>
         <div class="stream-item-body">
             <div layout>
                 <div layout="column" flex>
@@ -26,7 +26,7 @@
                     <p class="md-subhead">{{vm.catch.title}}</p>
                 </div>
                 <div layout="column">
-                    <p class="md-body-1"><a ng-href="#/catch/{{vm.catch.id}}" am-time-ago="vm.catch.created_at"></a></p>
+                    <p class="md-caption"><a ng-href="#/catch/{{vm.catch.id}}" am-time-ago="vm.catch.created_at"></a></p>
                     <p class="md-body-1" ng-show="vm.catch.length>0">{{vm.catch.length}} inches </p>
                 </div>
             </div>           
