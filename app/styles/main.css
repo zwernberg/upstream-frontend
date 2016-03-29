@@ -199,6 +199,16 @@ a:focus {
 }
 .register-form a { color:black; }
 
+/* Animations */
+
+.md-fab:hover {
+  transform: rotate(90deg);
+  transition: all 100ms ease-in-out;
+}
+
+
+
+
 /* UTILITY CLASSES */
 img {
   border: 0;
