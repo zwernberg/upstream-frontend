@@ -10,7 +10,7 @@
 </header>
 <div class="stream">  
     <div class="stream-item">      
-        <div class="stream-item-body">
+        <div class="stream-item__body">
             <div layout layout-align="center center" >
                 <img src="images/avatar.png" alt="avatar"/> 
                 <p class="md-body-1" flex><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.owner.username}}</a></p>
@@ -19,7 +19,7 @@
             </div> 
         </div>            
         <a ng-href="#/catch/{{vm.catch.id}}"><img ng-src="{{vm.catch.fishPhoto}}" class="img-responsive fish-photo"></a>
-        <div class="stream-item-body">
+        <div class="stream-item__body">
             <div layout>
                 <div layout="column" flex>
                     <p class="md-body-1"><a ng-href="#/user/{{vm.catch.owner.id}}">{{vm.catch.location}}</a></p>

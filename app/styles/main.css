@@ -27,7 +27,6 @@ md-fab-speed-dial {
     bottom: 15px !important;
     right: 3vw !important;
 }
-
 footer { 
   position: absolute;
   left: 0;
@@ -39,6 +38,10 @@ p {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
+}
+img {
+  border: 0;
+  max-width: 100% !important;
 }
 .container {
   max-width: 600px;
@@ -119,12 +122,12 @@ a:focus {
   margin-bottom: 35px;
   padding-bottom: 10px; 
 }
-.stream-item-body { padding: 8px; }
-.stream-item-body md-input-container {
+.stream-item__body { padding: 8px; }
+.stream-item__body md-input-container {
   margin: 0;
   padding: 0;
 }
-.stream-item-body img {
+.stream-item__body img {
   height: 25px;
   width: 25px; 
   border-radius: 50%; 
@@ -206,14 +209,8 @@ a:focus {
   transition: all 100ms ease-in-out;
 }
 
-
-
-
 /* UTILITY CLASSES */
-img {
-  border: 0;
-  max-width: 100% !important;
-}
+
 .img-responsive {
   display: block;
   max-width: 100%;
