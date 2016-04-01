@@ -14,9 +14,16 @@
             <img src="images/avatar.png" alt="avatar"/>
             <div layout="column">
                 <p class="md-title">{{user.username}}</p>
-                <p class="md-body-1"><a ng-href="#/userprofile">Following {{user.following}}</a></p>
-                <p class="md-body-1"><a ng-href="#/userprofile">Followed by {{user.followers}}</a></p>
+                <p class="md-body-1">Brooklyn, NY</p>
             </div>
+            <div flex></div>
+            <div layout="column">
+                <p class="md-body-1">Following: <a ng-href="#/userprofile">{{user.following}}</a></p>
+                <p class="md-body-1">Followers: <a ng-href="#/userprofile">{{user.followers}}</a></p>
+            </div>
+        </div>
+        <div layout layout-align="end end">            
+            <p class="md-body-1">"Life is a big fish and water is everywhere." - Plato</p> 
             <div flex></div>
             <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">
                 <p class="md-caption" ng-show="user.is_following == true">You follow this user.</p>
@@ -25,12 +32,6 @@
             <div layout="column" layout-align="start end" ng-show="user.username == currentUser.username">
                 <p class="md-body-1" flex><a ng-href="#/userprofile">Edit profile</a></p>
                 <p class="md-body-1" flex><a href="" ng-click="confirmLogout()">Log out</a></p>
-            </div>               
-        </div>
-        <div layout>
-            <div layout="column">
-                <p class="md-body-1">Brooklyn, NY</p>
-                <p class="md-body-1">"Life is a big fish and water is everywhere." - Plato</p>
             </div>
         </div>
         <!-- div layout layout-align="start start" class="user-favorite-section">
