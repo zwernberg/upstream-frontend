@@ -205,7 +205,7 @@ a:focus {
 /* Animations */
 
 .md-fab:hover {
-  transform: rotate(90deg);
+  transform: rotate(135deg);
   transition: all 100ms ease-in-out;
 }
 
