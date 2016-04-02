@@ -21,6 +21,7 @@
   "appPath": "app",
   "moduleName": "upstreamApp",
   "resolutions": {
-    "moment": ">=2.8.0 <2.11.0"
+    "moment": ">=2.8.0 <2.11.0",
+    "angular": "1.5.3"
   }
 }

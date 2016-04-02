@@ -16,11 +16,6 @@
                 <p class="md-title">{{user.username}}</p>
                 <p class="md-body-1">Brooklyn, NY</p>
             </div>
-            <div flex></div>
-            <div layout="column">
-                <p class="md-body-1">Following: <a ng-href="#/userprofile">{{user.following}}</a></p>
-                <p class="md-body-1">Followers: <a ng-href="#/userprofile">{{user.followers}}</a></p>
-            </div>
         </div>
         <div layout layout-align="end end">            
             <p class="md-body-1">"Life is a big fish and water is everywhere." - Plato</p> 
@@ -39,6 +34,12 @@
             <a href="#" flex><span class="material-icons">directions_boat</span> Trout</a>
             <a href="#"><span class="material-icons">adb</span> Fly</a>         
         </div -->         
+    </div>
+    <div class="user-card">
+        <div layout>
+            <p class="md-body-1" flex="50">Following: <a ng-href="#/userprofile">{{user.following}}</a></p>
+            <p class="md-body-1" flex="50">Followers: <a ng-href="#/userprofile">{{user.followers}}</a></p>
+        </div>
     </div>
         
     <div class="user-grid" layout-wrap layout="row">
