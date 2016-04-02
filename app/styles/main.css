@@ -172,10 +172,10 @@ a:focus {
 
 /*  UPLOAD PROCESS STYLING*/
 .photo-upload-view {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .photo-selection, .photo-preview, .photo-details-body, .fish-details-body {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* SEARCH PAGE STYLING */
