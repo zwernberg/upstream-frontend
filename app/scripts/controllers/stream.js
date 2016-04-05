@@ -9,6 +9,7 @@
  */
 angular.module('upstreamApp')
   .controller('StreamCtrl', function ($scope, $rootScope, catchService, postService, userService, currentUserService, $resource,  Upload, $routeParams, $timeout) {
+    $scope.isOpen = false;
     $scope.catches = catchService.query();
 	$scope.toggleComments = function(currentCatch){
 		postService.toggleComment(currentCatch);

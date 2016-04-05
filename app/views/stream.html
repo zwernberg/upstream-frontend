@@ -47,7 +47,11 @@
     <div layout>
         <md-button class="md-accent" ng-click="loadMoreCatches()" flex>Load more...</md-button>
     </div>    
-    <md-fab-speed-dial md-direction="up" class="md-fab-bottom-right md-scale" ng-show="authenticated">
+    <md-fab-speed-dial md-direction="up" 
+                       class="md-fab-bottom-right md-scale" 
+                       md-open="isOpen"
+                       ng-mouseenter="isOpen=true"
+                       ng-mouseleave="isOpen=false">
         <md-fab-trigger>
             <md-button aria-label="Add" class="md-fab md-accent material-icons">add</md-button>
         </md-fab-trigger>
