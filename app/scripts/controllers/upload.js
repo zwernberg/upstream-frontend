@@ -12,6 +12,7 @@ angular
     .controller('UploadCtrl', function ($scope, catchService, $resource,  Upload, $routeParams, $timeout, $location) {
         $scope.photoSelected         = false;
         $scope.photoDetailsCompleted = false;
+        $scope.grayscale = 50;
         
         $scope.selectPhoto = function() {
             $scope.photoSelected = true;

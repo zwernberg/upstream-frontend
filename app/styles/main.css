@@ -205,10 +205,9 @@ a:focus {
 /* Animations */
 
 md-fab-trigger:hover {
-  transform: rotate(135deg);
-  transition: all 100ms ease-in-out;
+  transform: rotate(45deg);
+  transition: all 50ms ease-in-out;
 }
-
 /* UTILITY CLASSES */
 
 .img-responsive {
