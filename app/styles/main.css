@@ -171,13 +171,9 @@ a:focus {
 }
 
 /*  UPLOAD PROCESS STYLING*/
-.photo-upload-view {
+.photo-upload-view, .photo-selection, .photo-preview, .photo-details-body, .fish-details-body {
   margin-top: 35px;
 }
-.photo-selection, .photo-preview, .photo-details-body, .fish-details-body {
-  margin-top: 35px;
-}
-
 /* SEARCH PAGE STYLING */
 .search-result {
   padding: 5px;
