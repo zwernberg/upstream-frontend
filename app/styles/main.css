@@ -1,3 +1,6 @@
+/**********************************************************  
+        BASE STYLES
+**********************************************************/
 .debug { border: 1px red dashed; }
 body,
 html {  
@@ -59,7 +62,9 @@ a:focus {
 }
 .material-icons { cursor: pointer; }
 
-/* SPLASH PAGE STYLING */
+/**********************************************************  
+        SPLASH PAGE
+**********************************************************/
 .splash-page {
   height: 100vh;
   background-image: url(../images/splash.jpg);
@@ -106,7 +111,9 @@ a:focus {
   text-shadow: 0 0 1px gray;
 }
 
-/* STREAM CARDS STYLING */
+/**********************************************************  
+        STREAM CARDS
+**********************************************************/
 .stream {
   margin: auto;
   margin-top: 10px;
@@ -140,8 +147,9 @@ a:focus {
   margin: auto;
 }
 
-
-/* USER PROFILE STYLING */
+/**********************************************************  
+        USER PROFILE
+**********************************************************/
 .user-card {
   box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
   color: white;  
@@ -170,9 +178,14 @@ a:focus {
   margin-top: 20px;
 }
 
-/*  UPLOAD PROCESS STYLING*/
+/**********************************************************  
+        UPLOAD PROCESS STYLING
+**********************************************************/
 .photo-upload-view, .upload-container { margin-top: 35px; }
-/* SEARCH PAGE STYLING */
+
+/**********************************************************  
+        SEARCH PAGE STYLING
+**********************************************************/
 .search-result {
   padding: 5px;
   border-top: solid 1px #e2e9e2;
@@ -190,20 +203,26 @@ a:focus {
   font-weight: 500;  
 }
 
-/* LOGIN & REGISTRATION STYLING */
+/**********************************************************  
+        LOGIN & REGISTRATION STYLING
+**********************************************************/
 .login-form, .register-form {
     margin-top: 40px;
 }
 .register-form a { color:black; }
 
-/* Animations */
 
+/**********************************************************  
+        ANIMATIONS
+**********************************************************/
 md-fab-trigger:hover {
   transform: rotate(45deg);
   transition: all 50ms ease-in-out;
 }
-/* UTILITY CLASSES */
 
+/**********************************************************  
+        UTILITY CLASSES
+**********************************************************/
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -211,8 +230,9 @@ md-fab-trigger:hover {
 }
 .text-center { text-align: center; }
 
-/* MEDIA QUERIES */
-
+/**********************************************************  
+        MEDIA QUERIES
+**********************************************************/
 @media (min-width: 768px) {
   .container {
     width: 750px;
