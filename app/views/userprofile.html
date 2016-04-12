@@ -27,6 +27,11 @@
                 <input name="email" id="id_email" class="form-control" type="email" ng-model="model.email" required />
 			</md-input-container>
             <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
+			<md-input-container flex>
+                <label for="id_bio">Bio</label>
+                <input name="bio" id="id_bio" class="form-control" type="text" ng-model="model.bio" required />
+			</md-input-container>
+            <div class="alert alert-danger" ng-repeat="error in errors.bio">{{error}}</div>
             <md-button type="submit" class="md-raised md-accent" ng-show="authenticated">Update Profile</md-button>
         </form>
         <div class="alert alert-warning" ng-if="authenticated == false">You need to be logged in to do this.</div>

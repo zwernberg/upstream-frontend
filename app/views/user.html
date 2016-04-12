@@ -18,8 +18,9 @@
             </div>
         </div>
         <div layout layout-align="end end">            
-            <p class="md-body-1">"Life is a big fish and water is everywhere." - Plato</p> 
+			<p class="md-body-1">{{user.userprofile.bio}}<p>
             <div flex></div>
+			
             <div layout="column" layout-align="center end" ng-hide="user.username == currentUser.username">
                 <p class="md-caption" ng-show="user.is_following == true">You follow this user.</p>
                 <div class="material-icons" ng-click="follow(user)" ng-style="{ 'color' : (user.is_following) ? '#bd320f' : '#c2c2d6' }">person_add</div>
