@@ -7,7 +7,7 @@
                 <!-- Navigation buttons --> 
                 <div ng-show="picFile">
                     <p class="md-display-2 text-center">Photo preview</p>
-                    <div class="photo-preview" layout>
+                    <div class="upload-container" layout>
                         <md-button class="md-raised" ng-click="picFile=null" flex>BACK</md-button>
                         <div flex></div>
                         <md-button class="md-raised md-accent" ng-disabled="!myForm.$valid" ng-click="selectPhoto()" flex>NEXT</md-button>
@@ -15,7 +15,7 @@
                 </div>                      
                 <div layout="column" ng-hide="picFile">
                     <p class="md-display-2 text-center">Share a photo</p>
-                    <div class="photo-selection" layout>
+                    <div class="upload-container" layout>
                         <md-button ng-href="#/stream" class="md-raised" flex>BACK</md-button>
                         <div flex></div>
                         <md-button input 
@@ -41,7 +41,7 @@
             <!-- Photo detail screen of upload process -->
             <div ng-show="photoSelected">
                 <p class="md-display-2 text-center">Photo details</p>
-                <div class="photo-details-body">
+                <div class="upload-container">
                     <!-- Navigation buttons -->
                     <div layout>
                         <md-button class="md-raised" ng-click="photoSelected=false" flex>BACK</md-button>
@@ -64,7 +64,7 @@
             <!-- Fish detail screen of upload process -->
             <div ng-show="photoDetailsCompleted">
                 <p class="md-display-2 text-center">Fish details</p>
-                <div class="fish-details-body">
+                <div class="upload-container">
                     <!-- Navigation buttons -->
                     <div layout>
                         <md-button class="md-raised" ng-click="unCompletePhotoDetails()" flex>BACK</md-button>
