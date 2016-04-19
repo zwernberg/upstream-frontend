@@ -182,6 +182,10 @@ a:focus {
         UPLOAD PROCESS STYLING
 **********************************************************/
 .photo-upload-view, .upload-container { margin-top: 35px; }
+.photo-upload-view p {
+  font-weight: 700;
+  color: #558B2F;
+}
 
 /**********************************************************  
         SEARCH PAGE STYLING
