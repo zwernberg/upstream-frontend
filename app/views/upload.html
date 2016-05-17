@@ -26,7 +26,8 @@
                                 name="file"    
                                 accept="image/*"  
                                 ngf-resize-if="$width > 800"
-                                ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"  
+                                ngf-resize="{width: 800, quality: 1.0, centerCrop: true}"
+                                ngf-fix-orientation="true"  
                                 required
                                 flex>
                                 BROWSE
